@@ -4,6 +4,9 @@ import "./globals.css";
 
 import ClientWrapper from "@/components/layout/ClientWrapper";
 import Footer from "@/components/layout/Footer";
+import SplashCursor from "@/components/effects/SpalashCursor";
+
+
 
 
 
@@ -27,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${preahvihear.variable}`}>
       <body className="antialiased min-h-screen bg-[#000000]">
-       
+       <SplashCursor />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                <ClientWrapper>    {children} </ClientWrapper>              
         </div>
