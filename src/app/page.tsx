@@ -1,4 +1,5 @@
-import AllPage from '@/components/layout/AllPage'
+
+import AllPage from '@/components/AllPage/AllPage'
 import Hero from '@/components/layout/Hero'
 import React from 'react'
 

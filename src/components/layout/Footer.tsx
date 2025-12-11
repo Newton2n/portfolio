@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-
+import { FaGithub, FaLinkedin,FaInstagram,FaWhatsapp } from "react-icons/fa";
+import { MdEmail, MdWhatsapp } from "react-icons/md";
+import { FaXTwitter } from "react-icons/fa6";
 const socialLinks = [
   { icon: FaGithub, label: "GitHub", href: "https://github.com/Newton2n" },
   { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/newton2n" },
-  { icon: FaTwitter, label: "Twitter", href: "https://x.com/NewtonYt66184" },
-  { icon: MdEmail, label: "Email", href: "mailto:newtonyt04@gmail.com" },
+  { icon: FaXTwitter, label: "Twitter", href: "https://x.com/NewtonYt66184" },
+  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/webcre8or?igsh=eXhrbzE0bjBtMXZi" },
+  { icon: FaWhatsapp, label: "Whatsapp", href: "https://wa.me/8801612676969"},
+  { icon: MdEmail, label: "Email", href: "mailto:newtonyt04@gmail.com"},
+  
+  
 ];
 
 export default function Footer() {
@@ -34,10 +38,12 @@ export default function Footer() {
         {/* Email CTA */}
         <div>
           <a
-            href="#"
+            href="https://wa.me/8801612676969"
+          target="_blank"
+          rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#E2DDB4] text-black hover:bg-[#d6d1a3] rounded-lg font-semibold transition-colors"
           >
-            <MdEmail size={20} />
+            <MdWhatsapp size={20} />
             Get In Touch
           </a>
         </div>
