@@ -1,16 +1,15 @@
-import AboutPage from "../About/AboutPage"
-import ContactPage from "../Contact/Contact"
-
-
+import AboutPage from "../AboutPage/AboutPage";
+import ConnectPage from "../ConnectPage/Connect";
+import ProjectSection from "../ProjectPage/ProjectSection";
 
 const AllPage = () => {
   return (
     <>
-    <AboutPage/>
-    <ContactPage/>
+      <AboutPage />
+      <ConnectPage />
+      <ProjectSection />
     </>
-    
-  )
-}
+  );
+};
 
-export default AllPage
+export default AllPage;

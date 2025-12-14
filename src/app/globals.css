@@ -10,6 +10,7 @@ html {
   font-family: var(--font-Preahvihear), sans-serif;
    scroll-behavior: smooth;
 }
-/* Makes blur smoother and more like macOS */
 
-
+html, body {
+  overflow-x: hidden;
+}

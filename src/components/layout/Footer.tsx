@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { MdEmail, MdWhatsapp } from "react-icons/md";
+import {  MdWhatsapp } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 const socialLinks = [
   { icon: FaGithub, label: "GitHub", href: "https://github.com/Newton2n" },
   {
@@ -16,15 +17,16 @@ const socialLinks = [
     href: "https://www.instagram.com/webcre8or",
   },
   { icon: FaWhatsapp, label: "Whatsapp", href: "https://wa.me/8801612676969" },
-  { icon: MdEmail, label: "Email", href: "mailto:newtonyt04@gmail.com" },
+  { icon: SiGmail , label: "Email", href: "mailto:newtonyt04@gmail.com" },
 ];
 
 export default function Footer() {
   const currentYear = "2025";
 
   return (
-    <footer className="border-t border-[#E2DDB4]/30 bg-black text-[#E2DDB4]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+    <>
+    <footer className="border-t border-[#E2DDB4]/30  text-[#E2DDB4]">
+      <div className="md:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
         {/* Contact CTA */}
         <div className="max-w-2xl space-y-4">
           <h2 className="text-3xl sm:text-4xl font-bold">
@@ -83,9 +85,10 @@ export default function Footer() {
           <span>·</span>
           <Link href="/about">About</Link>
           <span>·</span>
-          <Link href="/contact">Contact</Link>
+          <Link href="/connect">Connect</Link>
         </div>
       </div>
     </footer>
+    </>
   );
 }

@@ -1657,7 +1657,7 @@ export default function SplashCursor({
       <canvas
         ref={canvasRef}
         id="fluid"
-        className="w-screen h-screen block"
+        className="w-full h-screen block"
       ></canvas>
     </div>
   );
