@@ -17,7 +17,7 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
     <>
       <Header />
       <main>{children}</main>
-      {showLoader && <LoadingEffect />} {/* overlay loader */}
+      {showLoader && <LoadingEffect />} 
     </>
   );
 }

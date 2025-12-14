@@ -14,11 +14,11 @@ const tabs: Tab[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
-  { label: "Connect", href: "/contact" },
+  { label: "Connect", href: "/connect" },
 ];
 
 // Define the accent color for re-use
-const PRIMARY_ACCENT_COLOR = "#F6EFD2"; 
+const PRIMARY_ACCENT_COLOR = "#FFD700"; 
 // #E43636
 export default function Header() {
   const pathname = usePathname();

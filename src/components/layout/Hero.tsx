@@ -36,6 +36,10 @@ const Hero = () => {
         className="h-full w-full object-cover"
       />
     </div>
+            <span className="relative flex size-1.5">
+  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+  <span className="relative inline-flex size-1.5 rounded-full bg-[#FFD700]"></span>
+</span>
   </div>
 </div>
 
