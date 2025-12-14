@@ -6,12 +6,12 @@ import { Project } from "./ProjectCardTypes";
 
 const projects: Project[] = [
   {
-    title: "Social Media ",
+    title: "Full Stack Social Media ",
     category: "Full-stack",
     image: "/image/postora.png",
     video: "/video/postora.mp4",
     description:
-      "A modern personal portfolio website with clean UI, animations, and responsive design.",
+      "A full-stack, Pinterest-inspired social media application built with Next.js and Appwrite. The app supports user authentication, post creation, and image-based content discovery through a responsive, grid-style interface backed by real-time backend services.",
     tech: ["Javascript","React","Appwrite","Redux", "Tailwind","TinyMc",],
     link: "https://blog-app-kappa-ebon.vercel.app/",
     sourceCode:"https://github.com/Newton2n/Blog-App-By-React-And-Appwrite"

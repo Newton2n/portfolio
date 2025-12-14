@@ -14,25 +14,21 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [hover,setHover] =useState<string>("opacity-100")
+  const [hover, setHover] = useState<string>("opacity-100");
   const mouseEnter = () => {
-    setHover("opacity-0")
+    setHover("opacity-0");
     const videoELement = videoRef.current;
     if (!videoELement) return;
-    
+
     if (!videoLoaded) {
       videoELement.src = project.video;
-      console.log(videoELement.src);
-      console.log("loaded")
       setVideoLoaded(true);
-      
     }
     videoELement.play().catch(() => {});
   };
   const mouseRemove = () => {
     videoRef.current?.pause();
-    setHover("opacity-100")
-    
+    setHover("opacity-100");
   };
   return (
     <div
@@ -46,23 +42,26 @@ export default function ProjectCard({
         alt={project.title}
         width={300}
         height={200}
-       
-        className="object-cover  w-auto h-auto transition-opacity duration-300 group-hover:opacity-0 cursor-pointer "
+        className="object-cover  transition-opacity duration-300 group-hover:opacity-0 cursor-pointer "
       />
 
       {/* Hover Video */}
       <video
         ref={videoRef}
-       muted
+        muted
         loop
         playsInline
-        
         className="hidden md:block absolute cursor-pointer inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
       />
 
       {/* Overlay */}
-      <div className={` absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent px-4 py-3`}  >
-        <h3 className={`text-[15px] font-semibold mb-1  text-[#FFD700] ${hover}`}>{project.title}</h3>
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-3">
+        {" "}
+        <h3
+          className={`text-[15px] font-semibold mb-1  text-[#FFD700] ${hover}`}
+        >
+          {project.title}
+        </h3>
         {/* {project.tech && (
           <div className={`flex flex-wrap gap-2 text-xs text-[#FFD700] mb-2 ${hover}`}>
             {project.tech.map((tech, idx) => (
@@ -75,7 +74,6 @@ export default function ProjectCard({
             ))}
           </div>
         )} */}
-
         <div className="flex gap-2">
           <a
             href={project.link}

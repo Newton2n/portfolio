@@ -19,7 +19,7 @@ const tabs: Tab[] = [
 
 // Define the accent color for re-use
 const PRIMARY_ACCENT_COLOR = "#FFD700"; 
-// #E43636
+
 export default function Header() {
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement | null>(null);
