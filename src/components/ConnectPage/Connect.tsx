@@ -70,7 +70,7 @@ const ConnectPage = () => {
           href="https://x.com/NewtonYt66184"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Newton Twitter(X) Account "
+          aria-label="Newton Twitter(X) Account"
           className="relative flex items-center group"
         >
           <FaXTwitter className="group-hover:text-[#FFD700] transition-colors" />

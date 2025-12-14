@@ -43,7 +43,7 @@ export default function ProjectCard({
         alt={project.title}
         width={300}
         height={200}
-        className="object-cover  transition-opacity duration-300 group-hover:opacity-0 cursor-pointer"
+        className="object-cover  transition-opacity duration-300 group-hover:opacity-0 "
       />
 
       {/* Video */}

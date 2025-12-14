@@ -19,7 +19,7 @@ const projects: Project[] = [
   {
     title: "Portfolio Website",
     category: "Front-end",
-    image: "/image/porfolio.webp",
+    image: "/image/portfolio.webp",
     video: "/video/portfolio.webm",
     description:
       "A modern personal portfolio website with clean UI, animations, and responsive design.",

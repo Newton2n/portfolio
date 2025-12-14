@@ -35,6 +35,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               src={project.video}
               controls
               autoPlay
+              muted
               className="w-full h-auto object-contain"
               aria-label={`Preview video of ${project.title} project`}
             />

@@ -19,7 +19,7 @@ const Hero = () => {
           href="https://github.com/Newton2n"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Newton Git hub profile"
+          aria-label="Newton GitHub profile"
         >
           <FaGithub />
         </a>
