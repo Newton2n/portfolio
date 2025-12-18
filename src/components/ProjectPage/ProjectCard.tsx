@@ -17,6 +17,7 @@ export default function ProjectCard({
 
   // Desktop hover: play video
   const handleMouseEnter = () => {
+    console.log("clicked")
     const videoELement = videoRef.current;
     if (!videoELement) return;
 
@@ -43,7 +44,8 @@ export default function ProjectCard({
         alt={project.title}
         width={300}
         height={200}
-        className="object-cover  transition-opacity duration-300 group-hover:opacity-0 "
+        priority
+        className="object-cover  opacity-100  transition-opacity duration-300 group-hover:opacity-0 "
       />
 
       {/* Video */}
