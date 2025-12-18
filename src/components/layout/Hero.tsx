@@ -4,6 +4,7 @@ import Image from "next/image";
 import TextType from "../effects/TypeWriter";
 const Hero = () => {
   return (
+    <>
     <section className="w-full flex flex-col md:flex-row px-6 md:px-10 py-6 md:py-8 items-center md:items-center gap-8 md:gap-16">
       {/* LEFT SOCIAL BAR */}
       <div className="w-full md:w-2/12 flex md:flex-col gap-6 text-white text-2xl md:text-3xl justify-center ">
@@ -50,15 +51,16 @@ const Hero = () => {
         <p className="text-[#F6EFD2] text-6xl sm:text-5xl md:text-7xl font-bold pb-4 md:pb-6">
           HEY, I'M
         </p>
-
+        <div className="w-full min-h-[150px]">
         <TextType
           text={["Your Newton", "Frontend dev.", "Coder", "UI Designer", ""]}
           typingSpeed={75}
           pauseDuration={1500}
           showCursor={true}
           cursorCharacter=""
-          className="text-white text-5xl sm:text-5xl md:text-7xl font-bold"
+          className="text-white min-w-full h-full text-5xl sm:text-5xl md:text-7xl font-bold"
         />
+        </div>
       </div>
 
       {/* RIGHT WIDGET */}
@@ -71,6 +73,8 @@ const Hero = () => {
         </div>
       </div>
     </section>
+    </>
+  
   );
 };
 
