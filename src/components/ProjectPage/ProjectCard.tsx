@@ -17,7 +17,7 @@ export default function ProjectCard({
 
   // Desktop hover: play video
   const handleMouseEnter = () => {
-    console.log("clicked")
+    
     const videoELement = videoRef.current;
     if (!videoELement) return;
 

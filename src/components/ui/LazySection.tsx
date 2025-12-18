@@ -17,5 +17,9 @@ export default function LazySection({
     margin: "-200px 0px", // preload before visible
   });
 
-  return <div ref={ref} className={minHeight}>{isInView ? children : null}</div>;
+  return (
+    <div ref={ref} className={minHeight}>
+      {isInView ? children : <div className="animate-pulse h-full" />}
+    </div>
+  );
 }
