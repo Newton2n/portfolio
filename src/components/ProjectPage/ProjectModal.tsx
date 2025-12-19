@@ -9,13 +9,13 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   return (
     <div
-      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-[#E2DDB4]/7 backdrop-blur-md flex items-center justify-center z-50 p-4 "
       role="dialog"
       aria-modal="true"
       onClick={onClose}
     >
       <div
-        className="bg-black rounded-xl w-full max-w-xl md:max-w-2xl overflow-hidden relative max-h-[90vh] flex flex-col"
+        className="bg-black rounded-xl w-full max-w-xl md:max-w-2xl overflow-hidden relative max-h-[90vh] flex flex-col border-[1.5px] border-[#E2DDB4] "
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}

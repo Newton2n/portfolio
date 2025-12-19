@@ -23,7 +23,7 @@ const projects: Project[] = [
     video: "/video/portfolio.webm",
     description:
       "A modern personal portfolio website with clean UI, animations, and responsive design.",
-    tech: ["TypeScript","React", "Next.js", "Tailwind","React Bits"],
+    tech: ["TypeScript","React","Next.js","Tailwind","React Bits","Shadcn"],
     link: "https://newtondev.vercel.app/",
     sourceCode:"https://github.com/Newton2n/My_Portfolio"
   },

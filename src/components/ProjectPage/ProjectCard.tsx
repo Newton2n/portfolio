@@ -16,8 +16,7 @@ export default function ProjectCard({
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   // Desktop hover: play video
-  const handleMouseEnter = () => {
-    
+  const playVideo = () => {
     const videoELement = videoRef.current;
     if (!videoELement) return;
 
@@ -28,15 +27,16 @@ export default function ProjectCard({
     videoELement.play().catch(() => {});
   };
 
-  const handleMouseLeave = () => {
+  const pauseVideo = () => {
     videoRef.current?.pause();
   };
 
   return (
     <div
       className="group relative block rounded-xl overflow-hidden border border-[#E2DDB4]/30 shadow-lg shadow-black/50 transition-all duration-300 hover:shadow-[#FFD700]/30 hover:scale-105 w-[300px]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={playVideo}
+      onMouseLeave={pauseVideo}
+      onClick={playVideo} 
     >
       {/* Thumbnail */}
       <Image
@@ -52,9 +52,8 @@ export default function ProjectCard({
       <video
         ref={videoRef}
         muted
-        loop
         playsInline
-        className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        className=" absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
         aria-label={`Preview video of ${project.title} project`}
         tabIndex={-1}
       />
