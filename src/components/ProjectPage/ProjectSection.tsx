@@ -11,9 +11,9 @@ const projects: Project[] = [
     image: "/image/postora.webp",
     video: "/video/postora.webm",
     description:
-      "A full-stack, Pinterest-inspired social media application built with Next.js and Appwrite. The app supports user authentication, post creation, and image-based content discovery through a responsive, grid-style interface backed by real-time backend services.",
-    tech: ["Javascript","React","Appwrite","Redux", "Tailwind","TinyMc",],
-    link: "https://blog-app-kappa-ebon.vercel.app/",
+      "Postora | A full-stack image-sharing platform built with React, Tailwind CSS, and Appwrite. Users can seamlessly upload, manage, and discover content through a responsive Masonry Grid, featuring secure authentication and real-time social interactions.",
+    tech: ["JavaScript","React","Appwrite","Redux", "Tailwind","TinyMCE"],
+    link: "https://postora-web.vercel.app/",
     sourceCode:"https://github.com/Newton2n/Blog-App-By-React-And-Appwrite"
   },
   {
