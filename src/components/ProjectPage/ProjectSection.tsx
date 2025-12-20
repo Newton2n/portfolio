@@ -12,7 +12,7 @@ const projects: Project[] = [
     video: "/video/postora.webm",
     description:
       "Postora | A full-stack image-sharing platform built with React, Tailwind CSS, and Appwrite. Users can seamlessly upload, manage, and discover content through a responsive Masonry Grid, featuring secure authentication and real-time social interactions.",
-    tech: ["Javascript","React","Appwrite","Redux", "Tailwind","TinyMc"],
+    tech: ["JavaScript","React","Appwrite","Redux", "Tailwind","TinyMCE"],
     link: "https://postora-web.vercel.app/",
     sourceCode:"https://github.com/Newton2n/Blog-App-By-React-And-Appwrite"
   },
