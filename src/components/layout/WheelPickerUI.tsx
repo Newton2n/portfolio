@@ -38,7 +38,7 @@ const options: WheelPickerOption[] = [
     value: "redux",
   },
   {
-    label: "Next.js 16",
+    label: "Next.js ",
     value: "nextjs",
   },
 
@@ -59,11 +59,6 @@ const options: WheelPickerOption[] = [
     label: "Sass / SCSS",
     value: "sass",
   },
-  {
-    label: "Bootstrap",
-    value: "bootstrap",
-  },
-
   // Backend / Fullstack Tools
   {
     label: "Appwrite",

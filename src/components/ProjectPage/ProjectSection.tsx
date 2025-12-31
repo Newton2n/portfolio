@@ -11,8 +11,8 @@ const projects: Project[] = [
     image: "/image/postora.webp",
     video: "/video/postora.webm",
     description:
-      "Postora | A full-stack image-sharing platform built with React, Tailwind CSS, and Appwrite. Users can seamlessly upload, manage, and discover content through a responsive Masonry Grid, featuring secure authentication and real-time social interactions.",
-    tech: ["JavaScript","React","Appwrite","Redux", "Tailwind","TinyMCE"],
+      "Postora is a full-stack image sharing platform migrated to Next.js. It features full CRUD functionality for managing posts and a complete profile system for user info and profile image updates, all powered by Appwrite",
+    tech: ["Next.js", "Appwrite", "React", "Redux", "Tailwind", "TinyMCE"],
     link: "https://postora-web.vercel.app/",
     sourceCode:"https://github.com/Newton2n/Blog-App-By-React-And-Appwrite"
   },
@@ -23,7 +23,7 @@ const projects: Project[] = [
     video: "/video/portfolio.webm",
     description:
       "A modern personal portfolio website with clean UI, animations, and responsive design.",
-    tech: ["TypeScript","React","Next.js","Tailwind","React Bits","Shadcn"],
+    tech: ["TypeScript","Next.js","Tailwind","React Bits"],
     link: "https://newtondev.vercel.app/",
     sourceCode:"https://github.com/Newton2n/My_Portfolio"
   },
