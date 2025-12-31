@@ -38,7 +38,7 @@ const options: WheelPickerOption[] = [
     value: "redux",
   },
   {
-    label: "Next.js ",
+    label: "Next.js",
     value: "nextjs",
   },
 
@@ -89,7 +89,6 @@ const options: WheelPickerOption[] = [
     value: "ui-ux-design",
   },
 
-  
   // Design & Prototyping Tools
   {
     label: "Figma",
