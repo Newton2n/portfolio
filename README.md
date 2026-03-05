@@ -1,36 +1,199 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+# 🚀 Newton Developer Portfolio
 
-## Getting Started
+A modern **frontend developer portfolio** built with **Next.js, React, TypeScript, and Tailwind CSS**.
 
-First, run the development server:
+Showcasing my projects, UI experiments, and development journey.
 
-```bash
+### 🌐 Live Demo
+https://newtondev.vercel.app/
+
+</div>
+
+---
+
+# 🎥 Demo
+
+<div align="center">
+
+<img src="./public/image/demo-screenshot-readme/screen-record.gif" width="800" alt="Portfolio Demo"/>
+
+</div>
+
+---
+
+# 📌 Badges
+
+<div align="center">
+
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38B2AC?logo=tailwindcss)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
+
+</div>
+
+---
+
+# 📸 Preview
+
+## Desktop
+
+<div align="center">
+
+<img src="./public/image/portfolio.webp" width="800" alt="Portfolio Homepage"/>
+
+<img src="./public/image/demo-screenshot-readme/project-section.png" width="800" alt="Project Section"/>
+
+<img src="./public/image/demo-screenshot-readme/in-project.png" width="800" alt="Project Details"/>
+
+</div>
+
+---
+
+## Mobile
+
+<div align="center">
+
+<img src="./public/image/demo-screenshot-readme/home-mobile.png" width="300" alt="Mobile Home"/>
+
+<img src="./public/image/demo-screenshot-readme/project-section-mobile.png" width="300" alt="Mobile Projects"/>
+
+</div>
+
+---
+
+# 📚 Table of Contents
+
+- About
+- Features
+- Tech Stack
+- Project Structure
+- Installation
+- Deployment
+- Future Improvements
+- Author
+
+---
+
+# 🧠 About
+
+This is my **personal portfolio website** where I showcase:
+
+- Frontend development skills
+- Personal projects
+- UI and animation experiments
+- Contact information
+
+The goal is to present my work in a **clean, modern, and responsive interface**.
+
+---
+
+# ✨ Features
+
+✔ Responsive design  
+✔ Modern UI with Tailwind CSS  
+✔ Interactive cursor animation  
+✔ Smooth scrolling animations  
+✔ Project showcase section  
+✔ Mobile-first layout  
+✔ Optimized performance with Next.js  
+
+portfolio/
+├── public/
+│
+├── src/
+│   ├── app/
+│   │   ├── (routes)/
+│   │   │   ├── about/
+│   │   │   ├── connect/
+│   │   │   └── projects/
+│   │   │
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   │   ├── AboutPage/
+│   │   ├── AllPage/
+│   │   ├── ConnectPage/
+│   │   ├── ProjectPage/
+│   │   ├── effects/
+│   │   ├── layout/
+│   │   └── ui/
+│   │
+│   └── lib/
+│       └── utils.ts
+│
+├── .gitignore
+├── components.json
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── tsconfig.json
+└── README.md
+
+# ⚙️ Installation
+
+Clone the repository
+git clone https://github.com/Newton2n/portfolio.git
+
+Navigate to the folder
+
+cd portfolio
+
+Install dependencies
+npm install
+
+Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+# 🚀 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is deployed using **Vercel**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Steps:
 
-## Deploy on Vercel
+1. Fork repository  
+2. Import project in Vercel  
+3. Connect GitHub  
+4. Deploy  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 📈 Future Improvements
+
+- Blog section   
+- Dark / Light theme  
+- More animations  
+- Performance improvements  
+
+---
+
+# 👨‍💻 Author
+
+**Newton**
+
+🌐 Portfolio  
+https://newtondev.vercel.app/
+
+💻 GitHub  
+https://github.com/Newton2n
+
+
+---
+
+# ⭐ Support
+
+If you like this project, please give it a **star ⭐ on GitHub**.
