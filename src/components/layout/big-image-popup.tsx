@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
@@ -8,7 +8,10 @@ interface BigImagePopupProps {
   imageSrc: string;
 }
 
-export default function BigImagePopup({ onClose, imageSrc }: BigImagePopupProps) {
+export default function BigImagePopup({
+  onClose,
+  imageSrc,
+}: BigImagePopupProps) {
   return (
     <div
       className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
@@ -33,9 +36,9 @@ export default function BigImagePopup({ onClose, imageSrc }: BigImagePopupProps)
         <div className="rounded-xl overflow-hidden border-[1.5px] border-[#E2DDB4] bg-black">
           <Image
             src={imageSrc}
-            alt="Expanded view"
-            width={1200} 
-            height={800} 
+            alt="Expanded view of Newton's image"
+            width={1200}
+            height={800}
             className="w-auto h-auto max-w-full max-h-[85vh] object-contain"
             priority
           />

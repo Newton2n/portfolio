@@ -15,6 +15,7 @@ const Hero = () => {
         <div className="w-full md:w-2/12 flex md:flex-col gap-6 text-white text-2xl md:text-3xl justify-center ">
           <a
             href="https://www.linkedin.com/in/newton2n"
+            title="Newton's Linkedin profile"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Newton Linkedin profile"
@@ -23,6 +24,7 @@ const Hero = () => {
           </a>
           <a
             href="https://github.com/Newton2n"
+            title="Newton's GitHub profile"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Newton GitHub profile"
@@ -35,18 +37,19 @@ const Hero = () => {
             {/* Name Text */}
 
             {/* Profile Picture */}
-            <div
+            <button
+              aria-label="Open profile image"
               className="h-8 w-8 rounded-full overflow-hidden cursor-pointer"
               onClick={() => setIsOpen(true)}
             >
               <Image
                 src="/image/my-image1.webp"
-                alt="My Profile"
+                alt=""
                 height={100}
                 width={100}
                 className="h-full w-full object-cover"
               />
-            </div>
+            </button>
             <span className="relative flex size-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex size-1.5 rounded-full bg-[#FFD700]"></span>
