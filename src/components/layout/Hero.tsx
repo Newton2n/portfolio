@@ -32,7 +32,7 @@ const Hero = () => {
           {/* Profile Picture */}
           <div className="h-8 w-8 rounded-full overflow-hidden cursor-grab">
             <Image
-              src="/image/myImage.webp"
+              src="/image/my-image.webp"
               alt="My Profile"
               height={100}
               width={100}
