@@ -28,6 +28,7 @@ const options: WheelPickerOption[] = [
   { label: "Express.js", value: "expressjs" },
   { label: "MongoDB", value: "mongodb" },
   { label: "Mongoose", value: "mongoose" },
+  { label: "Appwrite", value: "appwrite" },
 
   // Tools
   { label: "Git", value: "git" },
