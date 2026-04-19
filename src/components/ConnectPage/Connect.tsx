@@ -45,7 +45,7 @@ const ConnectPage = () => {
 
         {/* Email */}
         <a
-          href="mailto:newtonyt04@gmail.com"
+          href="mailto:newton.bepari.dev@gmail.com"
           aria-label="Newton Email Address"
           className="relative flex items-center group"
         >
