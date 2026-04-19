@@ -3,13 +3,15 @@ import Experience from "./Experience";
 
 const AboutPage = () => {
   const points = [
-    "Focused on building fast, clean, and maintainable front-end applications",
-    "Comfortable working with modern tools like React, Next.js, and Tailwind",
-    "Strong foundation in JavaScript and TypeScript with attention to code quality",
-    "Experienced with state management libraries like Redux",
-    "Worked with backend services like Appwrite to build full-stack applications",
-    "Value clear architecture, readable code, and practical solutions",
-    "Prefer shipping real, working features over chasing perfection on paper",
+    "Builds front-end applications using React, Next.js, and Tailwind CSS",
+    "Working knowledge of JavaScript and TypeScript",
+    "Learning backend development in depth with Node.js, Express, and MongoDB (Mongoose)",
+    "Strong in JavaScript with practical understanding of async flows, APIs, and data handling",
+    "Can build useable REST APIs and handle basic CRUD operations",
+    "Familiar with Redux for state management",
+    "Uses Git and GitHub for version control with clear commits and  branching",
+    "Focuses on writing clean and readable code",
+    "Comfortable connecting frontend with backend services",
   ];
 
   // Function to highlight keywords
@@ -21,8 +23,14 @@ const AboutPage = () => {
       "TypeScript",
       "Tailwind",
       "Redux",
-
       "Appwrite",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "clear",
+      "commits",
+      "clean",
+      "readable"
     ];
 
     let highlighted = text;
@@ -31,7 +39,7 @@ const AboutPage = () => {
       const regex = new RegExp(`(${word})`, "g");
       highlighted = highlighted.replace(
         regex,
-        `<span class="text-[#FFD700] font-semibold">$1</span>`
+        `<span class="text-[#FFD700] font-semibold">$1</span>`,
       );
     });
 

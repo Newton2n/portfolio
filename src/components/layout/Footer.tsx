@@ -32,12 +32,12 @@ const socialLinks = [
   {
     icon: SiGmail,
     label: "Newton Email profile",
-    href: "mailto:newtonyt04@gmail.com",
+    href: "mailto:newton.bepari.dev@gmail.com",
   },
 ];
 
 export default function Footer() {
-  const currentYear = "2025";
+  const currentYear = "2026";
 
   return (
     <>
