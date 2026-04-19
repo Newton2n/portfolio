@@ -1,22 +1,29 @@
-import React from "react";
-
 const Experience = () => {
   const experiences = [
     {
       title: "Front-end Development",
       duration: "2.5 years",
-      description: "Learning and building modern, responsive, and maintainable web applications using React, Next.js, and Tailwind CSS."
+      description:
+        "Building responsive web applications using React, Next.js, and Tailwind CSS with focus on clean UI and maintainable code.",
     },
     {
-      title: "Full-stack Projects",
+      title: "Backend Development",
       duration: "Ongoing",
-      description: "Hands-on experience integrating frontend with backend services like Appwrite, practicing state management with Redux, and improving code quality."
+      description:
+        "Building backend services using Node.js, Express, and MongoDB (Mongoose), creating REST APIs and handling CRUD operations with basic validation and error handling.",
     },
     {
-      title: "Skills & Tools",
+      title: "Full-Stack Development",
+      duration: "Ongoing",
+      description:
+        "Integrating frontend applications with custom backend APIs, managing data flow, and handling client-server communication.",
+    },
+    {
+      title: "Development Practices",
       duration: "Continuous",
-      description: "Strong foundation in JavaScript and TypeScript, experience with version control (Git), and focus on clean, practical, and scalable solutions."
-    }
+      description:
+        "Using Git for version control with structured commits, working with Redux for state management, and focusing on clean code and debugging.",
+    },
   ];
 
   return (
@@ -33,12 +40,14 @@ const Experience = () => {
           >
             {/* Title & Duration */}
             <div className="text-center md:text-left mb-4 md:mb-0">
-              <h3 className="text-xl md:text-2xl font-semibold mb-2">{exp.title}</h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                {exp.title}
+              </h3>
               <p className="text-[#FFD700] font-semibold">{exp.duration}</p>
             </div>
 
             {/* Description */}
-            <p className="text-[#E2DDB4]/95 text-center md:text-left leading-relaxed">
+            <p className="text-[#E2DDB4]/95 text-center md:text-left md:ml-4 leading-relaxed">
               {exp.description}
             </p>
           </div>
