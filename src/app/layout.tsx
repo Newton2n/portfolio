@@ -4,7 +4,6 @@ import "./globals.css";
 
 import ClientWrapper from "@/components/layout/ClientWrapper";
 import Footer from "@/components/layout/Footer";
-import SplashCursor from "@/components/effects/SplashCursor";
 import { ThemeProviderWrapper } from "@/providers/ThemeProvider";
 
 import { Analytics } from "@vercel/analytics/next"
@@ -33,7 +32,6 @@ export default function RootLayout({
       <body className="antialiased min-h-screen bg-white dark:bg-black transition-colors duration-200">
         <ThemeProviderWrapper>
           <Analytics />
-          <SplashCursor />
           <div className="mx-auto">
             <ClientWrapper>{children}</ClientWrapper>
           </div>

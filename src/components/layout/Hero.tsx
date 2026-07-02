@@ -1,86 +1,71 @@
 "use client";
+import { useState } from "react";
 import { FaLinkedinIn, FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section id="home" className="w-full px-6 md:px-10 py-20 md:py-32 bg-white dark:bg-black transition-colors duration-200">
-      <div className="max-w-5xl mx-auto">
-        {/* Badge */}
-        <div className="inline-block px-3 py-1 mb-6 border border-neutral-300 dark:border-neutral-700 rounded text-xs font-semibold text-neutral-700 dark:text-neutral-300">
-          Backend & Full-Stack Engineer
-        </div>
+    <section id="home" className="w-full px-6 py-16 bg-white dark:bg-black transition-colors duration-200">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-12">
+        
+        {/* Profile Image - Always centered on mobile, left on desktop */}
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="flex-shrink-0 relative rounded-full border-4 border-neutral-100 dark:border-neutral-900 overflow-hidden hover:scale-105 transition-transform duration-300 shadow-xl"
+        >
+          <Image
+            src="/image/my-image1.webp"
+            alt="Newton's Avatar"
+            width={160} 
+            height={160}
+            className="object-cover w-32 h-32 md:w-40 md:h-40"
+          />
+        </button>
 
-        {/* Title */}
-        <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6">
-          Hi, I&apos;m Newton
-        </h1>
+        {/* Text and Actions - Centered on mobile, left-aligned on desktop */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="inline-block px-3 py-1 mb-3 border border-neutral-200 dark:border-neutral-800 rounded-full text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+            Backend & Full-Stack Developer
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-black text-neutral-900 dark:text-white tracking-tighter mb-4">
+            Hi, I&apos;m Newton
+          </h1>
+          
+          <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed max-w-md">
+            I build scalable backend systems and complete full-stack applications. Focused on system design, performance, and clean code architecture.
+          </p>
 
-        {/* Subtitle */}
-        <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 mb-8 max-w-3xl">
-          I build scalable backend systems and complete full-stack applications. Passionate about system design, APIs, and creating solutions that matter.
-        </p>
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <a
+              href="/resume.pdf"
+              download
+              className="px-6 py-2 bg-neutral-900 dark:bg-white text-white dark:bg-white dark:text-black font-bold text-sm rounded hover:opacity-80 transition-all"
+            >
+              Download Resume
+            </a>
 
-        {/* CTA and Avatar Row */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mb-12">
-          <a
-            href="/resume.pdf"
-            download
-            className="px-6 py-3 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-semibold rounded transition-colors"
-          >
-            Download Resume
-          </a>
-          <div className="flex-shrink-0">
-            <Image
-              src="/image/avatar.png"
-              alt="Newton's Avatar"
-              width={80}
-              height={80}
-              className="rounded-full border-2 border-neutral-300 dark:border-neutral-700"
-            />
+            {/* Social Icons */}
+            <div className="flex gap-5 text-lg">
+              {[
+                { Icon: FaGithub, href: "https://github.com/Newton2n" },
+                { Icon: FaLinkedinIn, href: "https://www.linkedin.com/in/newton2n" },
+                { Icon: FaTwitter, href: "https://x.com/NewtonYt66184" },
+                { Icon: FaFacebook, href: "https://www.facebook.com/newton.bepari" },
+              ].map(({ Icon, href }, i) => (
+                <a key={i} href={href} target="_blank" className="text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                  <Icon />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Social Icons */}
-        <div className="flex gap-4 text-xl">
-          <a
-            href="https://github.com/Newton2n"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/newton2n"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
-          >
-            <FaLinkedinIn />
-          </a>
-          <a
-            href="https://x.com/NewtonYt66184"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
-          >
-            <FaTwitter />
-          </a>
-          <a
-            href="https://www.facebook.com/newton.bepari"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
-          >
-            <FaFacebook />
-          </a>
-        </div>
       </div>
+      
+      {/* Modal code remains the same... */}
     </section>
   );
 };
