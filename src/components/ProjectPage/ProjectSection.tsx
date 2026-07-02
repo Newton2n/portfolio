@@ -47,7 +47,7 @@ export default function ProjectSection() {
   return (
     <section id="projects" className="w-full px-6 md:px-10 py-16 md:py-24 bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12">Featured Projects</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-12">Featured Projects</h2>
 
         {/* Tabs */}
         <div className="flex justify-start gap-3 mb-12 flex-wrap">
@@ -56,8 +56,8 @@ export default function ProjectSection() {
               key={tab}
               className={`px-4 py-2 text-sm font-semibold rounded border transition-colors ${
                 activeTab === tab
-                  ? "bg-emerald-500 text-white border-emerald-500"
-                  : "border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:text-emerald-500"
+                  ? "bg-neutral-900 dark:bg-white text-white dark:text-black border-neutral-900 dark:border-white"
+                  : "border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:border-neutral-900 dark:hover:border-white hover:text-neutral-900 dark:hover:text-white"
               }`}
               onClick={() => setActiveTab(tab)}
             >

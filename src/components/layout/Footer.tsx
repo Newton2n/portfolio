@@ -16,15 +16,15 @@ export default function Footer() {
   const currentYear = "2026";
 
   return (
-    <footer className="border-t border-slate-300 dark:border-slate-800 bg-white dark:bg-black transition-colors duration-200">
+    <footer className="border-t border-neutral-300 dark:border-neutral-800 bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left: Copyright */}
           <div className="text-center md:text-left">
-            <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-1">
               © {currentYear} Newton Bepari. All rights reserved.
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-500">
+            <p className="text-xs text-neutral-500 dark:text-neutral-500">
               Crafted with focus and precision.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-2 rounded border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-emerald-500 hover:text-emerald-500 transition-colors"
+                className="p-2 rounded border border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-neutral-900 dark:hover:border-white hover:text-neutral-900 dark:hover:text-white transition-colors"
               >
                 <Icon size={18} />
               </a>

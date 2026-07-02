@@ -33,7 +33,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className="group relative block rounded overflow-hidden border border-slate-300 dark:border-slate-700 transition-all duration-300 hover:border-emerald-500 hover:shadow-md hover:shadow-emerald-500/30 hover:scale-105 w-[300px] bg-white dark:bg-black"
+      className="group relative block rounded overflow-hidden border border-neutral-300 dark:border-neutral-700 transition-all duration-300 hover:border-neutral-900 dark:hover:border-white hover:shadow-md hover:scale-105 w-[300px] bg-white dark:bg-black"
       onMouseEnter={playVideo}
       onMouseLeave={pauseVideo}
       onClick={playVideo}
@@ -67,7 +67,7 @@ export default function ProjectCard({
         <div className="flex gap-2">
           <button
             onClick={() => onViewDetails(project)}
-            className="px-3 py-1 rounded text-xs font-semibold bg-emerald-500 hover:bg-emerald-600 text-white transition-colors cursor-pointer"
+            className="px-3 py-1 rounded text-xs font-semibold bg-neutral-900 hover:bg-neutral-800 text-white transition-colors cursor-pointer"
           >
             View Details
           </button>

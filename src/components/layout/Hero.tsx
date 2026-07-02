@@ -4,20 +4,20 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section id="home" className="w-full px-6 md:px-10 py-20 md:py-32 bg-slate-50 dark:bg-black transition-colors duration-200">
+    <section id="home" className="w-full px-6 md:px-10 py-20 md:py-32 bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-5xl mx-auto">
         {/* Badge */}
-        <div className="inline-block px-3 py-1 mb-6 border border-slate-300 dark:border-slate-700 rounded text-xs font-semibold text-slate-700 dark:text-slate-300">
+        <div className="inline-block px-3 py-1 mb-6 border border-neutral-300 dark:border-neutral-700 rounded text-xs font-semibold text-neutral-700 dark:text-neutral-300">
           Backend & Full-Stack Engineer
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6">
           Hi, I&apos;m Newton
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-8 max-w-3xl">
+        <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 mb-8 max-w-3xl">
           I build scalable backend systems and complete full-stack applications. Passionate about system design, APIs, and creating solutions that matter.
         </p>
 
@@ -26,7 +26,7 @@ const Hero = () => {
           <a
             href="/resume.pdf"
             download
-            className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded transition-colors"
+            className="px-6 py-3 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-semibold rounded transition-colors"
           >
             Download Resume
           </a>
@@ -36,7 +36,7 @@ const Hero = () => {
               alt="Newton's Avatar"
               width={80}
               height={80}
-              className="rounded-full border-2 border-slate-300 dark:border-slate-700"
+              className="rounded-full border-2 border-neutral-300 dark:border-neutral-700"
             />
           </div>
         </div>
@@ -48,7 +48,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-500 transition-colors"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
             <FaGithub />
           </a>
@@ -57,7 +57,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-500 transition-colors"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
             <FaLinkedinIn />
           </a>
@@ -66,7 +66,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
-            className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-500 transition-colors"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
             <FaTwitter />
           </a>
@@ -75,7 +75,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-500 transition-colors"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
             <FaFacebook />
           </a>

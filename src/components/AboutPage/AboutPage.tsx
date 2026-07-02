@@ -44,19 +44,19 @@ const currentFocus = {
       {/* About Section */}
       <section id="about" className="w-full px-6 md:px-10 py-16 md:py-24 bg-white dark:bg-black transition-colors duration-200">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-12">About Me</h2>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* LEFT: Terminal IDE Box */}
-            <div className="border border-slate-300 dark:border-slate-700 rounded overflow-hidden">
-              <div className="bg-slate-100 dark:bg-slate-900 px-4 py-3 border-b border-slate-300 dark:border-slate-700 flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                <span className="ml-2 text-xs font-medium text-slate-600 dark:text-slate-400">newton_journey.js</span>
+            <div className="border border-neutral-300 dark:border-neutral-700 rounded overflow-hidden">
+              <div className="bg-neutral-100 dark:bg-neutral-900 px-4 py-3 border-b border-neutral-300 dark:border-neutral-700 flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-neutral-400"></div>
+                <div className="w-3 h-3 rounded-full bg-neutral-400"></div>
+                <div className="w-3 h-3 rounded-full bg-neutral-400"></div>
+                <span className="ml-2 text-xs font-medium text-neutral-600 dark:text-neutral-400">newton_journey.js</span>
               </div>
               <div className="p-6 font-mono text-sm leading-relaxed overflow-auto max-h-96 bg-white dark:bg-black">
-                <pre className="text-slate-700 dark:text-slate-300 text-xs whitespace-pre-wrap">
+                <pre className="text-neutral-700 dark:text-neutral-300 text-xs whitespace-pre-wrap">
                   <code>{backendJourney}</code>
                 </pre>
               </div>
@@ -64,22 +64,22 @@ const currentFocus = {
 
             {/* RIGHT: Hobbies */}
             <div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Personality & Interests</h3>
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-6">Personality & Interests</h3>
               <ul className="space-y-3">
                 {hobbies.map((hobby) => (
                   <li key={hobby.name} className="flex items-center gap-3">
                     <div className={`w-5 h-5 rounded border flex items-center justify-center flex-shrink-0 ${
                       hobby.checked
-                        ? "bg-emerald-500 border-emerald-500"
-                        : "border-slate-300 dark:border-slate-700"
+                        ? "bg-neutral-900 dark:bg-white border-neutral-900 dark:border-white"
+                        : "border-neutral-300 dark:border-neutral-700"
                     }`}>
-                      {hobby.checked && <FaCheck size={12} className="text-white" />}
+                      {hobby.checked && <FaCheck size={12} className="text-white dark:text-black" />}
                     </div>
-                    <span className="text-slate-700 dark:text-slate-300">{hobby.name}</span>
+                    <span className="text-neutral-700 dark:text-neutral-300">{hobby.name}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-8 pt-6 border-t border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm">
+              <p className="mt-8 pt-6 border-t border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-sm">
                 Always eager to solve complex backend puzzles and optimize system performance.
               </p>
             </div>
@@ -88,17 +88,17 @@ const currentFocus = {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="w-full px-6 md:px-10 py-16 md:py-24 bg-slate-50 dark:bg-slate-950/50 transition-colors duration-200">
+      <section id="skills" className="w-full px-6 md:px-10 py-16 md:py-24 bg-neutral-50 dark:bg-neutral-950 transition-colors duration-200">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12">Skills & Expertise</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-12">Skills & Expertise</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Backend */}
-            <div className="border border-slate-300 dark:border-slate-700 rounded p-6 bg-white dark:bg-black">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Backend</h3>
+            <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">Backend</h3>
               <div className="flex flex-wrap gap-2">
                 {["Node.js", "Express.js", "REST APIs", "MongoDB", "PostgreSQL", "System Design"].map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500 rounded">
+                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-neutral-900 dark:bg-white text-white dark:text-black border border-neutral-900 dark:border-white rounded">
                     {skill}
                   </span>
                 ))}
@@ -106,11 +106,11 @@ const currentFocus = {
             </div>
 
             {/* Frontend */}
-            <div className="border border-slate-300 dark:border-slate-700 rounded p-6 bg-white dark:bg-black">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Frontend</h3>
+            <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">Frontend</h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "GSAP"].map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 rounded">
+                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-700 rounded">
                     {skill}
                   </span>
                 ))}
@@ -118,11 +118,11 @@ const currentFocus = {
             </div>
 
             {/* Tools */}
-            <div className="border border-slate-300 dark:border-slate-700 rounded p-6 bg-white dark:bg-black">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Tools</h3>
+            <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">Tools</h3>
               <div className="flex flex-wrap gap-2">
                 {["Git", "GitHub", "Vercel", "Docker", "APIs", "Testing"].map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 rounded">
+                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-700 rounded">
                     {skill}
                   </span>
                 ))}
