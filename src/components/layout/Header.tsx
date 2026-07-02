@@ -29,7 +29,7 @@ export default function Header() {
   // Track active route based on pathname
   useEffect(() => {
     if (pathname === "/") {
-      setActiveSection("#home");
+      setActiveSection("/");
     } else {
       const matchingTab = tabs.find((tab) => tab.href === pathname);
       if (matchingTab) {

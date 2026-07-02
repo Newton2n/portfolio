@@ -25,7 +25,6 @@ const ConnectPage = () => {
           target="_blank"
           className="w-full grid grid-cols-1 gap-6 mb-16"
         >
-          <input type="hidden" name="_next" value="https://yourwebsite.com/thanks" />
 
           {/* Row 1: Name and Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

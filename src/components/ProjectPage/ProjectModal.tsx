@@ -90,6 +90,22 @@ export default function ProjectModal({ project, onClose }: Props) {
                   {project.backendMetrics.database}
                 </div>
               )}
+              {project.backendMetrics.auth && (
+                <div>
+                  <span className="block font-semibold text-neutral-900 dark:text-white">
+                    Auth:
+                  </span>{" "}
+                  {project.backendMetrics.auth}
+                </div>
+              )}
+              {project.backendMetrics.tokenLifetimes && (
+                <div>
+                  <span className="block font-semibold text-neutral-900 dark:text-white">
+                    Token Lifetimes:
+                  </span>{" "}
+                  {project.backendMetrics.tokenLifetimes}
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -141,6 +157,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           <a
             href={project.link}
             target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-black font-bold text-xs rounded transition-all hover:opacity-80"
           >
             Live Demo
@@ -148,6 +165,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           <a
             href={project.sourceCode}
             target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 border border-neutral-200 dark:border-neutral-800 text-xs font-bold rounded transition-all hover:border-neutral-900 dark:hover:border-white"
           >
             Source Code
