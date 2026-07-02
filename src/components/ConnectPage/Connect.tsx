@@ -7,7 +7,7 @@ const ConnectPage = () => {
   return (
     <>
 
-   <section className="w-full overflow-hidden bg-black text-[#E2DDB4]  px-4 md:px-16 py-16 flex flex-col items-center">
+   <section id="contact" className="w-full overflow-hidden bg-black text-[#E2DDB4]  px-4 md:px-16 py-16 flex flex-col items-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
         Connect With Me
       </h2>

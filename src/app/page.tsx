@@ -6,7 +6,7 @@ import Hero from "@/components/layout/Hero";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Newton is a frontend developer specializing in modern React and Next.js applications.",
+    "Newton is a backend and full-stack engineer specializing in scalable systems, APIs, and end-to-end web applications.",
 };
 
 const Page = () => {

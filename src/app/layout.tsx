@@ -15,11 +15,11 @@ const preahvihear = Preahvihear({
 
 export const metadata: Metadata = {
   title: {
-    default: "Newton — Frontend Developer",
+    default: "Newton — Backend & Full-Stack Engineer",
     template: "%s | Newton",
   },
   description:
-    "Portfolio of Newton, a frontend developer building modern, responsive web applications.",
+    "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
 };
 
 export default function RootLayout({

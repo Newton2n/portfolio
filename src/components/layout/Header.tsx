@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -11,10 +10,11 @@ interface Tab {
 }
 
 const tabs: Tab[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Connect", href: "/connect" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 // Define the accent color for re-use
@@ -24,11 +24,31 @@ export default function Header() {
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement | null>(null);
   const [spacerHeight, setSpacerHeight] = useState(0);
+  const [activeSection, setActiveSection] = useState("#home");
 
   useEffect(() => {
     if (headerRef.current) {
       setSpacerHeight(headerRef.current.offsetHeight);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["#home", "#about", "#skills", "#projects", "#contact"];
+      for (const sectionId of sections) {
+        const element = document.querySelector(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -48,17 +68,23 @@ export default function Header() {
           }}
         >
           {tabs.map((tab) => {
-            const isActive = pathname === tab.href;
+            const isActive = activeSection === tab.href;
             return (
-              <Link
+              <a
                 key={tab.href}
                 href={tab.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(tab.href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
                 className="relative flex-1 px-4 py-2 rounded-3xl text-sm cursor-pointer transition-colors hover:bg-[#F6EFD2]/8"
               >
                 {isActive && (
                   <motion.div
                     layoutId="active-tab"
-                    // FIX 1: Use the vibrant accent color for the moving indicator
                     className={`absolute inset-0 rounded-3xl `}
                     style={{ backgroundColor: PRIMARY_ACCENT_COLOR }}
                     
@@ -67,13 +93,11 @@ export default function Header() {
                 )}
                 <span 
                   className={`relative z-10 font-medium transition-colors`}
-                  // FIX 2: Text color on active tab is White (or Primary Accent) for visibility
-                  // FIX 3: Inactive text is Muted Gray
                   style={{ color: isActive ? ' #000' : '#E2DDB4' }}
                 >
                   {tab.label}
                 </span>
-              </Link>
+              </a>
             );
           })}
         </nav>

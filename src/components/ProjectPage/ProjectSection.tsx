@@ -8,7 +8,7 @@ const projects: Project[] = [
   {
     title: "Full Stack Social Media ",
     category: "Full-stack",
-    image: "/image/postora.webp",
+    image: "/image/full-stack-project.png",
     video: "/video/postora.webm",
     description:
       "Postora is a full-stack image sharing platform migrated to Next.js. It features full CRUD functionality for managing posts and a complete profile system for user info and profile image updates, all powered by Appwrite",
@@ -19,11 +19,11 @@ const projects: Project[] = [
   {
     title: "Portfolio Website",
     category: "Front-end",
-    image: "/image/portfolio.webp",
+    image: "/image/portfolio-project.png",
     video: "/video/portfolio.webm",
     description:
-      "A modern personal portfolio website with clean UI, animations, and responsive design.",
-    tech: ["TypeScript","Next.js","Tailwind","React Bits"],
+      "A modern personal portfolio website with clean UI, animations, and responsive design built to showcase backend engineering expertise.",
+    tech: ["TypeScript","Next.js","Tailwind","React","GSAP"],
     link: "https://newtondev.vercel.app/",
     sourceCode:"https://github.com/Newton2n/My_Portfolio"
   },
@@ -45,7 +45,7 @@ export default function ProjectSection() {
       : projects.filter((p) => p.category === activeTab);
 
   return (
-    <section className="w-full bg-black text-[#E2DDB4] px-6 md:px-16 py-16">
+    <section id="projects" className="w-full bg-black text-[#E2DDB4] px-6 md:px-16 py-16">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
        Featured Projects
       </h2>

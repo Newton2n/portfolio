@@ -10,7 +10,7 @@ const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <section className="w-full flex flex-col md:flex-row px-6 md:px-10 py-6 md:py-8 items-center md:items-center gap-8 md:gap-16">
+      <section id="home" className="w-full flex flex-col md:flex-row px-6 md:px-10 py-6 md:py-8 items-center md:items-center gap-8 md:gap-16">
         {/* LEFT SOCIAL BAR */}
         <div className="w-full md:w-2/12 flex md:flex-col gap-6 text-white text-2xl md:text-3xl justify-center ">
           <a
@@ -43,8 +43,8 @@ const Hero = () => {
               onClick={() => setIsOpen(true)}
             >
               <Image
-                src="/image/my-image1.webp"
-                alt=""
+                src="/image/avatar.png"
+                alt="Newton's professional avatar"
                 height={100}
                 width={100}
                 className="h-full w-full object-cover"
@@ -66,9 +66,9 @@ const Hero = () => {
             <TextType
               text={[
                 "Your Newton",
-                "Frontend dev.",
-                "Coder",
-                "UI Designer",
+                "Backend Engineer",
+                "Full-Stack Dev",
+                "System Optimizer",
                 "",
               ]}
               typingSpeed={75}
@@ -78,6 +78,14 @@ const Hero = () => {
               className="text-white min-w-full h-full text-5xl sm:text-5xl md:text-7xl font-bold"
             />
           </div>
+          {/* Download Resume Button */}
+          <a
+            href="/resume.pdf"
+            download
+            className="mt-6 px-6 py-3 bg-[#FFD700] text-black font-semibold rounded-lg hover:bg-[#FFC700] transition-colors"
+          >
+            Download Resume
+          </a>
         </div>
 
         {/* RIGHT WIDGET */}
@@ -93,7 +101,7 @@ const Hero = () => {
          {/* Image pop up section*/}
         {isOpen && (
           <BigImagePopup
-            imageSrc="/image/my-image1.webp"
+            imageSrc="/image/avatar.png"
             onClose={() => setIsOpen(false)}
           />
         )}
