@@ -1,42 +1,13 @@
-import { FaCheck } from "react-icons/fa";
+import Image from "next/image";
+import { FaGithub, FaLinkedinIn, FaTwitter, FaFacebook } from "react-icons/fa";
 
 const AboutPage = () => {
-  const backendJourney = `// Backend Development Journey
-// ========================================
-
-// Started with foundational web concepts
-const foundation = {
-  languages: ["JavaScript", "TypeScript"],
-  yearStarted: 2022,
-  focus: "Building scalable backend systems"
-}
-
-// Transitioned to Backend Optimization
-const backend = {
-  runtime: "Node.js",
-  frameworks: ["Express.js"],
-  databases: ["MongoDB", "PostgreSQL"],
-  apis: "RESTful Architecture"
-}
-
-// Solving Complex Backend Puzzles
-const currentFocus = {
-  challenges: [
-    "Database optimization",
-    "API performance tuning",
-    "System scalability",
-    "Authentication flows"
-  ],
-  enjoyment: "Architecting efficient solutions"
-}`;
-
-  const hobbies = [
-    { name: "Problem Solving", checked: true },
-    { name: "Reading Tech Blogs", checked: true },
-    { name: "Open Source Contributing", checked: true },
-    { name: "Sports & Fitness", checked: true },
-    { name: "Creative Coding", checked: true },
-    { name: "Building Side Projects", checked: true },
+  const technicalSkills = ["React", "Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL"];
+  
+  const stats = [
+    { number: "01+", label: "Years Experience" },
+    { number: "28+", label: "Tech Stack Skills" },
+    { number: "07+", label: "Total Projects" },
   ];
 
   return (
@@ -44,89 +15,131 @@ const currentFocus = {
       {/* About Section */}
       <section id="about" className="w-full px-6 md:px-10 py-16 md:py-24 bg-white dark:bg-black transition-colors duration-200">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-12">About Me</h2>
+          {/* Heading & Manifesto */}
+          <div className="mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-4">
+              Turning ideas into reality
+            </h2>
+            <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300">
+              Developer by day, problem solver by nature. Let's build something amazing together.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* LEFT: Terminal IDE Box */}
-            <div className="border border-neutral-300 dark:border-neutral-700 rounded overflow-hidden">
-              <div className="bg-neutral-100 dark:bg-neutral-900 px-4 py-3 border-b border-neutral-300 dark:border-neutral-700 flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-neutral-400"></div>
-                <div className="w-3 h-3 rounded-full bg-neutral-400"></div>
-                <div className="w-3 h-3 rounded-full bg-neutral-400"></div>
-                <span className="ml-2 text-xs font-medium text-neutral-600 dark:text-neutral-400">newton_journey.js</span>
+          {/* Profile & Technical Specialization Row */}
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-16">
+            {/* Left Column: Profile Data */}
+            <div>
+              {/* Avatar */}
+              <div className="mb-6">
+                <Image
+                  src="/image/avatar.png"
+                  alt="Newton's Avatar"
+                  width={120}
+                  height={120}
+                  className="rounded-full"
+                />
               </div>
-              <div className="p-6 font-mono text-sm leading-relaxed overflow-auto max-h-96 bg-white dark:bg-black">
-                <pre className="text-neutral-700 dark:text-neutral-300 text-xs whitespace-pre-wrap">
-                  <code>{backendJourney}</code>
-                </pre>
+
+              {/* Designation */}
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+                Backend & Full-Stack Engineer
+              </h3>
+
+              {/* Download Resume Button */}
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-block px-6 py-3 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-semibold rounded mb-8 transition-colors"
+              >
+                Download Resume
+              </a>
+
+              {/* Social Links */}
+              <div className="flex gap-4 text-2xl">
+                <a
+                  href="https://github.com/Newton2n"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/newton2n"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                >
+                  <FaLinkedinIn />
+                </a>
+                <a
+                  href="https://x.com/NewtonYt66184"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                >
+                  <FaTwitter />
+                </a>
+                <a
+                  href="https://www.facebook.com/newton.bepari"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                >
+                  <FaFacebook />
+                </a>
               </div>
             </div>
 
-            {/* RIGHT: Hobbies */}
+            {/* Right Column: Journey Terminal */}
             <div>
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-6">Personality & Interests</h3>
-              <ul className="space-y-3">
-                {hobbies.map((hobby) => (
-                  <li key={hobby.name} className="flex items-center gap-3">
-                    <div className={`w-5 h-5 rounded border flex items-center justify-center flex-shrink-0 ${
-                      hobby.checked
-                        ? "bg-neutral-900 dark:bg-white border-neutral-900 dark:border-white"
-                        : "border-neutral-300 dark:border-neutral-700"
-                    }`}>
-                      {hobby.checked && <FaCheck size={12} className="text-white dark:text-black" />}
-                    </div>
-                    <span className="text-neutral-700 dark:text-neutral-300">{hobby.name}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-8 pt-6 border-t border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-sm">
-                Always eager to solve complex backend puzzles and optimize system performance.
+              <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-4 uppercase tracking-wide">
+                Technical Specialization
+              </h4>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
+                I specialize in building robust, scalable backend systems with a focus on microservices architecture. My expertise spans secure authentication mechanisms, high-performance server logic, and optimized database design. I craft APIs that are both efficient and maintainable, ensuring systems can grow seamlessly as your business scales.
+              </p>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                Beyond backend excellence, I bridge the gap between frontend and server-side logic, delivering complete full-stack solutions. My approach emphasizes clean code, system reliability, and solving complex technical challenges through thoughtful design and pragmatic implementation.
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="w-full px-6 md:px-10 py-16 md:py-24 bg-neutral-50 dark:bg-neutral-950 transition-colors duration-200">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-12">Skills & Expertise</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Backend */}
-            <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">Backend</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Node.js", "Express.js", "REST APIs", "MongoDB", "PostgreSQL", "System Design"].map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-neutral-900 dark:bg-white text-white dark:text-black border border-neutral-900 dark:border-white rounded">
-                    {skill}
-                  </span>
+          {/* Structured Skills & Stats */}
+          <div>
+            {/* Technical Skills with Dividers */}
+            <div className="mb-12 pb-12 border-b border-neutral-200 dark:border-neutral-800">
+              <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-6 uppercase tracking-wide">
+                Core Technical Stack
+              </h4>
+              <div className="flex flex-wrap gap-0">
+                {technicalSkills.map((skill, index) => (
+                  <div key={skill} className="flex items-center">
+                    <span className="text-neutral-700 dark:text-neutral-300">{skill}</span>
+                    {index < technicalSkills.length - 1 && (
+                      <div className="w-px h-4 bg-neutral-300 dark:bg-neutral-700 mx-4"></div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
 
-            {/* Frontend */}
-            <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">Frontend</h3>
-              <div className="flex flex-wrap gap-2">
-                {["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "GSAP"].map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-700 rounded">
-                    {skill}
+            {/* Experience Stats Row */}
+            <div className="flex flex-col sm:flex-row justify-between gap-8">
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col">
+                  <span className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white">
+                    {stat.number}
                   </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Tools */}
-            <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">Tools</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Git", "GitHub", "Vercel", "Docker", "APIs", "Testing"].map((skill) => (
-                  <span key={skill} className="px-2 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-700 rounded">
-                    {skill}
+                  <span className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">
+                    {stat.label}
                   </span>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
