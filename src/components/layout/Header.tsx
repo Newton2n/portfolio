@@ -1,19 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github } from "lucide-react";
 
-interface Tab {
-  label: string;
-  href: string;
-}
-
-const tabs: Tab[] = [
+const tabs = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -22,37 +18,44 @@ export default function Header() {
   const [spacerHeight, setSpacerHeight] = useState(0);
   const [activeSection, setActiveSection] = useState("#home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [followers, setFollowers] = useState<number | null>(null);
 
   useEffect(() => {
-    if (headerRef.current) {
-      setSpacerHeight(headerRef.current.offsetHeight);
-    }
+    if (headerRef.current) setSpacerHeight(headerRef.current.offsetHeight);
   }, []);
 
+  // Track scroll for active state
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["#home", "#about", "#skills", "#projects", "#contact"];
-      for (const sectionId of sections) {
-        const element = document.querySelector(sectionId);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(sectionId);
-            break;
+      const scrollPosition = window.scrollY + 120;
+      tabs.forEach((tab) => {
+        const element = document.querySelector(tab.href);
+        if (element instanceof HTMLElement) {
+          if (element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
+            setActiveSection(tab.href);
           }
         }
-      }
+      });
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  // Fetch GitHub Followers
+  useEffect(() => {
+    fetch("https://api.github.com/users/Newton2n")
+      .then((res) => res.json())
+      .then((data) => { if (data.followers) setFollowers(data.followers); })
+      .catch((e) => console.error(e));
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setMobileMenuOpen(false);
+      setActiveSection(href);
     }
   };
 
@@ -60,78 +63,66 @@ export default function Header() {
     <>
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 w-full bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-200"
+        className="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-all duration-300"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
-          {/* Left: Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            {tabs.map((tab) => {
-              const isActive = activeSection === tab.href;
-              return (
-                <a
-                  key={tab.href}
-                  href={tab.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(tab.href);
-                  }}
-                  className={`text-sm font-medium transition-all ${
-                    isActive
-                      ? "px-4 py-1 bg-neutral-900 dark:bg-white text-white dark:text-black rounded-full"
-                      : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
-                  }`}
-                >
-                  {tab.label}
-                </a>
-              );
-            })}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+          
+          {/* Logo */}
+          <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="text-sm font-black tracking-tighter">NEWTON.DEV</a>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {tabs.map((tab) => (
+              <a
+                key={tab.href}
+                href={tab.href}
+                onClick={(e) => handleNavClick(e, tab.href)}
+                className={`text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-neutral-900 dark:hover:text-white ${
+                  activeSection === tab.href ? "text-neutral-900 dark:text-white underline underline-offset-8" : "text-neutral-500"
+                }`}
+              >
+                {tab.label}
+              </a>
+            ))}
           </nav>
 
-          {/* Mobile Navigation Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-neutral-700 dark:text-neutral-300"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Right Actions - Fully Responsive */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            
+            <a 
+              href="https://github.com/Newton2n" 
+              target="_blank" 
+              className="flex items-center gap-1.5 text-[10px] font-bold text-neutral-500 hover:text-black dark:hover:text-white transition-colors whitespace-nowrap"
+            >
+              <Github size={14} />
+              <span>{followers ?? "GITHUB"}</span>
+            </a>
 
-          {/* Right: Theme Toggle */}
-          <div className="ml-auto md:ml-0">
+            <div className="w-px h-4 bg-neutral-200 dark:bg-neutral-800" />
             <ThemeToggle />
+            
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2">
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-black border-t border-neutral-200 dark:border-neutral-800">
-            <nav className="flex flex-col px-6 py-4 gap-3">
-              {tabs.map((tab) => {
-                const isActive = activeSection === tab.href;
-                return (
-                  <a
-                    key={tab.href}
-                    href={tab.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(tab.href);
-                    }}
-                    className={`text-sm font-medium transition-all px-3 py-2 rounded ${
-                      isActive
-                        ? "bg-neutral-900 dark:bg-white text-white dark:text-black"
-                        : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
-                    }`}
-                  >
-                    {tab.label}
-                  </a>
-                );
-              })}
-            </nav>
+          <div className="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800 p-6 flex flex-col gap-6 animate-in slide-in-from-top-4">
+            {tabs.map((tab) => (
+              <a 
+                key={tab.href} 
+                href={tab.href} 
+                onClick={(e) => handleNavClick(e, tab.href)} 
+                className="text-2xl font-black uppercase tracking-tighter"
+              >
+                {tab.label}
+              </a>
+            ))}
           </div>
         )}
       </header>
-
-      {/* Spacer */}
       <div style={{ height: spacerHeight }} />
     </>
   );
