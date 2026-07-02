@@ -6,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 const socialLinks = [
   { icon: FaGithub, label: "GitHub", href: "https://github.com/Newton2n" },
   { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/newton2n" },
-  { icon: FaXTwitter, label: "Twitter", href: "https://x.com/NewtonYt66184" },
+  { icon: FaXTwitter, label: "X", href: "https://x.com/newtonbepari" },
   { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/webcre8or" },
   { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/8801612676969" },
   { icon: SiGmail, label: "Email", href: "mailto:newton.bepari.dev@gmail.com" },

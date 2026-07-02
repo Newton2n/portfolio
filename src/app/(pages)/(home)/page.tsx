@@ -16,8 +16,8 @@ const Page = () => {
     <>
       <Hero />
       <AboutPage />
-      <ProjectSection />
       <SkillsPage />
+      <ProjectSection />
       <Connect />
     </>
   );

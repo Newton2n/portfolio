@@ -1,4 +1,5 @@
-"use client";
+// "use client";
+import ContributionGraph from "../ContributionGraph";
 
 const SkillsPage = () => {
   const skillCategories = [
@@ -26,7 +27,7 @@ const SkillsPage = () => {
         
         {/* Header */}
         <div className="mb-20">
-          <h2 className="text-5xl md:text-7xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight">
             Engineering Matrix
           </h2>
           <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl">
@@ -35,7 +36,7 @@ const SkillsPage = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
           {skillCategories.map((category) => (
             <div key={category.title} className="p-8 border-2 border-neutral-200 dark:border-neutral-800 rounded-lg hover:border-neutral-900 dark:hover:border-white transition-all duration-300">
               <h3 className="text-xl font-bold text-neutral-950 dark:text-white mb-6 border-b border-neutral-200 dark:border-neutral-800 pb-4">
@@ -55,8 +56,11 @@ const SkillsPage = () => {
           ))}
         </div>
 
+        {/*  Contribution Graph Section */}
+        <ContributionGraph/>
+
         {/* Robust Footer Section */}
-        <div className="mt-20 p-10 bg-neutral-900 dark:bg-neutral-900 text-white rounded-lg flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="p-10 bg-neutral-900 dark:bg-neutral-900 text-white rounded-lg flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="max-w-lg">
             <h4 className="text-2xl font-bold mb-2">Looking for a specific stack?</h4>
             <p className="text-neutral-400">I am constantly evolving my toolkit. If your project requires specific integrations or technologies, let's discuss how I can adapt to your needs.</p>
