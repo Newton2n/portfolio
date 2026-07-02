@@ -20,7 +20,7 @@ const AboutPage = () => {
         <div className="max-w-5xl mx-auto">
           
           <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-extrabold text-neutral-900 dark:text-white mb-6 tracking-tight leading-none">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-neutral-900 dark:text-white mb-6 tracking-tight leading-none">
               Engineering Scalable Logic
             </h2>
             <p className="text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-medium leading-relaxed max-w-4xl">
@@ -59,7 +59,7 @@ const AboutPage = () => {
                 </div>
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full text-center py-3 mt-2 block border-2 border-neutral-900 dark:border-white bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-sans font-bold text-sm tracking-wide transition-all rounded shadow active:scale-[0.98]"
+                  className="w-full text-center py-3 mt-2 block border-2 border-neutral-900 dark:border-white bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-sans font-bold text-sm tracking-wide transition-all rounded shadow active:scale-[0.98] cursor-pointer"
                 >
                   View Engineering Matrix
                 </button>

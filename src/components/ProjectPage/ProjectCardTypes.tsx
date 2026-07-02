@@ -1,4 +1,3 @@
-// ProjectCardTypes.ts
 export interface Project {
   title: string;
   category: "Backend" | "Front-end" | "Full-stack" | "All";
@@ -7,13 +6,15 @@ export interface Project {
   link: string;
   sourceCode: string;
   features: string[];
-  image?: string;      // Optional
-  video?: string;      // Optional
-  backendMetrics?: {   // Make this optional with '?'
+  challenges: string[];
+  futureImprovements: string[];
+  image?: string;
+  video?: string;
+  backendMetrics?: {
     throughput?: string;
     latency?: string;
     architecture?: string;
-    endpoints?: string[];
+    endpoints?: string[]; 
     auth?: string;
     database?: string;
     tokenLifetimes?: string;
