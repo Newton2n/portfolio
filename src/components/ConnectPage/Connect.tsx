@@ -1,97 +1,72 @@
 
-import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram, FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
+
 const ConnectPage = () => {
   return (
-    <>
+    <section id="contact" className="w-full px-6 md:px-10 py-16 md:py-24 bg-neutral-50 dark:bg-neutral-950 transition-colors duration-200">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">Get In Touch</h2>
+        <p className="text-neutral-700 dark:text-neutral-300 mb-12 max-w-2xl">
+          I'm interested in freelance opportunities, collaborations, and new projects. Feel free to reach out!
+        </p>
 
-   <section className="w-full overflow-hidden bg-black text-[#E2DDB4]  px-4 md:px-16 py-16 flex flex-col items-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-        Connect With Me
-      </h2>
+        {/* Contact Info Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Email */}
+          <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
+            <div className="flex items-center gap-3 mb-3">
+              <MdEmail className="text-neutral-900 dark:text-white text-2xl" />
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white">Email</h3>
+            </div>
+            <a href="mailto:newton.bepari.dev@gmail.com" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+              newton.bepari.dev@gmail.com
+            </a>
+          </div>
 
-      <p className="text-[#E2DDB4]/90 text-center mb-8 max-w-2xl">
-        I'm always interested in collaborating on projects or freelance
-        opportunities. Send me a message and I'll get back to you as soon as
-        possible.
-      </p>
+          {/* Phone */}
+          <div className="border border-neutral-300 dark:border-neutral-700 rounded p-6 bg-white dark:bg-black">
+            <div className="flex items-center gap-3 mb-3">
+              <FaPhone className="text-neutral-900 dark:text-white text-xl" />
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white">Phone</h3>
+            </div>
+            <a href="tel:+8801612676969" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+              +880 161 267 6969
+            </a>
+          </div>
+        </div>
 
-      <div className="flex flex-wrap justify-center max-w-full gap-8 mt-12 text-2xl">
-        {/* GitHub */}
-        <a
-          href="https://github.com/Newton2n"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Newton GitHub Account"
-          className="relative flex items-center group  overflow-hidden"
-        >
-          <FaGithub className="group-hover:text-[#FFD700] transition-colors" />
-      
-        </a>
-
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/newton2n"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Newton LinkedIn Profile"
-          className="relative flex items-center group"
-        >
-          <FaLinkedin className="group-hover:text-[#FFD700] transition-colors" />
-          
-        </a>
-
-        {/* Email */}
-        <a
-          href="mailto:newton.bepari.dev@gmail.com"
-          aria-label="Newton Email Address"
-          className="relative flex items-center group"
-        >
-          <SiGmail className="group-hover:text-[#FFD700] transition-colors" />
-         
-        </a>
-
-        {/* Instagram */}
-        <a
-          href="https://www.instagram.com/webcre8or"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Newton Instagram Profile"
-          className="relative flex items-center group"
-        >
-          <FaInstagram className="group-hover:text-[#FFD700] transition-colors" />
-          
-        </a>
-
-        {/* X */}
-        <a
-          href="https://x.com/NewtonYt66184"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Newton Twitter(X) Account"
-          className="relative flex items-center group"
-        >
-          <FaXTwitter className="group-hover:text-[#FFD700] transition-colors" />
-          
-        </a>
-
-        {/* WhatsApp */}
+        {/* WhatsApp CTA */}
         <a
           href="https://wa.me/8801612676969"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Newton WhatsApp Account"
-          className="relative flex items-center group"
+          className="inline-block px-6 py-3 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-semibold rounded mb-12 transition-colors"
         >
-          <FaWhatsapp className="group-hover:text-[#FFD700] transition-colors" />
-          
+          Message on WhatsApp
         </a>
+
+        {/* Social Links */}
+        <div>
+          <h3 className="text-sm font-semibold text-neutral-900 dark:text-white mb-4 uppercase tracking-wide">Follow Me</h3>
+          <div className="flex gap-4 text-2xl">
+            <a href="https://github.com/Newton2n" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/newton2n" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+              <FaLinkedin />
+            </a>
+            <a href="https://x.com/NewtonYt66184" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+              <FaXTwitter />
+            </a>
+            <a href="https://www.instagram.com/webcre8or" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-    
-    </>
   );
 };
 

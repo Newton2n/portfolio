@@ -5,12 +5,21 @@
 @custom-variant dark (&:is(.dark *));
 
 html {
-  background: black;
-  color: white;
   font-family: var(--font-Preahvihear), sans-serif;
-   scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+html.light {
+  background: #ffffff;
+  color: #000000;
+}
+
+html.dark {
+  background: #000000;
+  color: #ffffff;
 }
 
 html, body {
   overflow-x: hidden;
+  transition: background-color 0.2s, color 0.2s;
 }

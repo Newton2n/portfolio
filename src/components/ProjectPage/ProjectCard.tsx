@@ -33,10 +33,10 @@ export default function ProjectCard({
 
   return (
     <div
-      className="group relative block rounded-xl overflow-hidden border border-[#E2DDB4]/30 shadow-lg shadow-black/50 transition-all duration-300 hover:shadow-[#FFD700]/30 hover:scale-105 w-[300px]"
+      className="group relative block rounded overflow-hidden border border-neutral-300 dark:border-neutral-700 transition-all duration-300 hover:border-neutral-900 dark:hover:border-white hover:shadow-md hover:scale-105 w-[300px] bg-white dark:bg-black"
       onMouseEnter={playVideo}
       onMouseLeave={pauseVideo}
-      onClick={playVideo} 
+      onClick={playVideo}
     >
       {/* Thumbnail */}
       <Image
@@ -45,7 +45,7 @@ export default function ProjectCard({
         width={300}
         height={200}
         priority
-        className="object-cover  opacity-100  transition-opacity duration-300 group-hover:opacity-0 "
+        className="object-cover opacity-100 transition-opacity duration-300 group-hover:opacity-0"
       />
 
       {/* Video */}
@@ -53,34 +53,33 @@ export default function ProjectCard({
         ref={videoRef}
         muted
         playsInline
-        className=" absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
         aria-label={`Preview video of ${project.title} project`}
         tabIndex={-1}
       />
 
       {/* Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-3">
-        <h3 className="text-[15px] md:text-[16px] font-semibold mb-1 text-[#FFD700] transition-opacity duration-300 group-hover:opacity-0">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent px-4 py-4">
+        <h3 className="text-sm font-semibold mb-3 text-white group-hover:opacity-0 transition-opacity duration-300">
           {project.title}
         </h3>
 
         <div className="flex gap-2">
+          <button
+            onClick={() => onViewDetails(project)}
+            className="px-3 py-1 rounded text-xs font-semibold bg-neutral-900 hover:bg-neutral-800 text-white transition-colors cursor-pointer"
+          >
+            View Details
+          </button>
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View live demo of ${project.title} project`}
-            className="px-2 py-1 rounded text-[#F6EFD2] text-xs md:text-sm font-semibold border border-[#FFD700] hover:bg-[#FFD700]/90 hover:text-black transition-colors"
+            className="px-3 py-1 rounded text-xs font-semibold border border-white text-white hover:bg-white/10 transition-colors"
           >
-            Live Project
+            Live
           </a>
-
-          <button
-            onClick={() => onViewDetails(project)}
-            className="px-3 py-1 rounded bg-black/10 border border-[#FFD700] text-[#FFD700] text-xs md:text-sm font-semibold hover:bg-[#FFD700] hover:text-black transition-colors cursor-pointer"
-          >
-            View Details
-          </button>
         </div>
       </div>
     </div>

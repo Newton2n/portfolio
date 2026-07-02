@@ -1,19 +1,22 @@
 
 import type { Metadata } from "next";
-import AllPage from "@/components/AllPage/AllPage";
 import Hero from "@/components/layout/Hero";
+import AboutPage from "@/components/AboutPage/AboutPage";
+import ProjectSection from "@/components/ProjectPage/ProjectSection";
+import Connect from "@/components/ConnectPage/Connect";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description:
-    "Newton is a frontend developer specializing in modern React and Next.js applications.",
+  title: "Newton — Backend & Full-Stack Engineer",
+  description: "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
 };
 
 const Page = () => {
   return (
     <>
       <Hero />
-      <AllPage />
+      <AboutPage />
+      <ProjectSection />
+      <Connect />
     </>
   );
 };

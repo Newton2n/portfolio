@@ -1,104 +1,87 @@
 "use client";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import WheelPickerUi from "../layout/WheelPickerUI";
+import { FaLinkedinIn, FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
 import Image from "next/image";
-import TextType from "../effects/TypeWriter";
-import BigImagePopup from "./big-image-popup";
-import { useState } from "react";
 
 const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
   return (
-    <>
-      <section className="w-full flex flex-col md:flex-row px-6 md:px-10 py-6 md:py-8 items-center md:items-center gap-8 md:gap-16">
-        {/* LEFT SOCIAL BAR */}
-        <div className="w-full md:w-2/12 flex md:flex-col gap-6 text-white text-2xl md:text-3xl justify-center ">
-          <a
-            href="https://www.linkedin.com/in/newton2n"
-            title="Newton's Linkedin profile"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Newton Linkedin profile"
-          >
-            <FaLinkedinIn />
-          </a>
-          <a
-            href="https://github.com/Newton2n"
-            title="Newton's GitHub profile"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Newton GitHub profile"
-          >
-            <FaGithub />
-          </a>
-
-          {/* Profile Picture with Hover Name */}
-          <div className=" flex ">
-            {/* Name Text */}
-
-            {/* Profile Picture */}
-            <button
-              aria-label="Open profile image"
-              className="h-8 w-8 rounded-full overflow-hidden cursor-pointer"
-              onClick={() => setIsOpen(true)}
-            >
-              <Image
-                src="/image/my-image1.webp"
-                alt=""
-                height={100}
-                width={100}
-                className="h-full w-full object-cover"
-              />
-            </button>
-            <span className="relative flex size-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
-              <span className="relative inline-flex size-1.5 rounded-full bg-[#FFD700]"></span>
-            </span>
-          </div>
+    <section id="home" className="w-full px-6 md:px-10 py-20 md:py-32 bg-white dark:bg-black transition-colors duration-200">
+      <div className="max-w-5xl mx-auto">
+        {/* Badge */}
+        <div className="inline-block px-3 py-1 mb-6 border border-neutral-300 dark:border-neutral-700 rounded text-xs font-semibold text-neutral-700 dark:text-neutral-300">
+          Backend & Full-Stack Engineer
         </div>
 
-        {/* CENTER TEXT */}
-        <div className="w-full md:w-7/12 flex flex-col items-center md:items-start text-center md:text-left">
-          <p className="text-[#F6EFD2] text-6xl sm:text-5xl md:text-7xl font-bold pb-4 md:pb-6">
-            HEY, I'M
-          </p>
-          <div className="w-full min-h-[150px]">
-            <TextType
-              text={[
-                "Your Newton",
-                "Frontend dev.",
-                "Coder",
-                "UI Designer",
-                "",
-              ]}
-              typingSpeed={75}
-              pauseDuration={1500}
-              showCursor={true}
-              cursorCharacter=""
-              className="text-white min-w-full h-full text-5xl sm:text-5xl md:text-7xl font-bold"
+        {/* Title */}
+        <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6">
+          Hi, I&apos;m Newton
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 mb-8 max-w-3xl">
+          I build scalable backend systems and complete full-stack applications. Passionate about system design, APIs, and creating solutions that matter.
+        </p>
+
+        {/* CTA and Avatar Row */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mb-12">
+          <a
+            href="/resume.pdf"
+            download
+            className="px-6 py-3 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-semibold rounded transition-colors"
+          >
+            Download Resume
+          </a>
+          <div className="flex-shrink-0">
+            <Image
+              src="/image/avatar.png"
+              alt="Newton's Avatar"
+              width={80}
+              height={80}
+              className="rounded-full border-2 border-neutral-300 dark:border-neutral-700"
             />
           </div>
         </div>
 
-        {/* RIGHT WIDGET */}
-        <div className="w-full md:w-3/12 flex flex-col items-center justify-center gap-2">
-          <p className="text-[#F6EFD2] text-lg md:text-xl font-bold mb-2">
-            My skills
-          </p>
-          <div className="w-3/4 sm:w-48 h-40 sm:h-48">
-            <WheelPickerUi />
-          </div>
+        {/* Social Icons */}
+        <div className="flex gap-4 text-xl">
+          <a
+            href="https://github.com/Newton2n"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/newton2n"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+          >
+            <FaLinkedinIn />
+          </a>
+          <a
+            href="https://x.com/NewtonYt66184"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://www.facebook.com/newton.bepari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+          >
+            <FaFacebook />
+          </a>
         </div>
-
-         {/* Image pop up section*/}
-        {isOpen && (
-          <BigImagePopup
-            imageSrc="/image/my-image1.webp"
-            onClose={() => setIsOpen(false)}
-          />
-        )}
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

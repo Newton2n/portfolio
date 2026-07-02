@@ -5,6 +5,7 @@ import "./globals.css";
 import ClientWrapper from "@/components/layout/ClientWrapper";
 import Footer from "@/components/layout/Footer";
 import SplashCursor from "@/components/effects/SplashCursor";
+import { ThemeProviderWrapper } from "@/providers/ThemeProvider";
 
 import { Analytics } from "@vercel/analytics/next"
 const preahvihear = Preahvihear({
@@ -15,11 +16,11 @@ const preahvihear = Preahvihear({
 
 export const metadata: Metadata = {
   title: {
-    default: "Newton — Frontend Developer",
+    default: "Newton — Backend & Full-Stack Engineer",
     template: "%s | Newton",
   },
   description:
-    "Portfolio of Newton, a frontend developer building modern, responsive web applications.",
+    "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
 };
 
 export default function RootLayout({
@@ -28,14 +29,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${preahvihear.variable}`}>
-      <body className="antialiased min-h-screen bg-[#000000]">
-        <Analytics/>
-        <SplashCursor />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <ClientWrapper>    {children} </ClientWrapper>             
-        </div>
-         <Footer />
+    <html lang="en" className={`${preahvihear.variable}`} suppressHydrationWarning>
+      <body className="antialiased min-h-screen bg-white dark:bg-black transition-colors duration-200">
+        <ThemeProviderWrapper>
+          <Analytics />
+          <SplashCursor />
+          <div className="mx-auto">
+            <ClientWrapper>{children}</ClientWrapper>
+          </div>
+          <Footer />
+        </ThemeProviderWrapper>
       </body>
     </html>
   );

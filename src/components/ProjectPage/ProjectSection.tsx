@@ -8,7 +8,7 @@ const projects: Project[] = [
   {
     title: "Full Stack Social Media ",
     category: "Full-stack",
-    image: "/image/postora.webp",
+    image: "/image/full-stack-project.png",
     video: "/video/postora.webm",
     description:
       "Postora is a full-stack image sharing platform migrated to Next.js. It features full CRUD functionality for managing posts and a complete profile system for user info and profile image updates, all powered by Appwrite",
@@ -19,11 +19,11 @@ const projects: Project[] = [
   {
     title: "Portfolio Website",
     category: "Front-end",
-    image: "/image/portfolio.webp",
+    image: "/image/portfolio-project.png",
     video: "/video/portfolio.webm",
     description:
-      "A modern personal portfolio website with clean UI, animations, and responsive design.",
-    tech: ["TypeScript","Next.js","Tailwind","React Bits"],
+      "A modern personal portfolio website with clean UI, animations, and responsive design built to showcase backend engineering expertise.",
+    tech: ["TypeScript","Next.js","Tailwind","React","GSAP"],
     link: "https://newtondev.vercel.app/",
     sourceCode:"https://github.com/Newton2n/My_Portfolio"
   },
@@ -45,37 +45,31 @@ export default function ProjectSection() {
       : projects.filter((p) => p.category === activeTab);
 
   return (
-    <section className="w-full bg-black text-[#E2DDB4] px-6 md:px-16 py-16">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-       Featured Projects
-      </h2>
+    <section id="projects" className="w-full px-6 md:px-10 py-16 md:py-24 bg-white dark:bg-black transition-colors duration-200">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-12">Featured Projects</h2>
 
-      {/* Tabs */}
-      <div className="flex justify-center gap-6 mb-12">
-        {(["All", "Front-end", "Full-stack"] as const).map((tab) => (
-          <button
-            key={tab}
-            className={`px-4 py-2 rounded-full font-semibold transition-colors cursor-pointer ${
-              activeTab === tab
-                ? "bg-[#FFD700] text-black"
-                : "bg-[#1a1a1a] text-[#E2DDB4]/80 hover:bg-[#FFD700]/30 hover:text-[#FFD700]"
-            }`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
+        {/* Tabs */}
+        <div className="flex justify-start gap-3 mb-12 flex-wrap">
+          {(["All", "Front-end", "Full-stack"] as const).map((tab) => (
+            <button
+              key={tab}
+              className={`px-4 py-2 text-sm font-semibold rounded border transition-colors ${
+                activeTab === tab
+                  ? "bg-neutral-900 dark:bg-white text-white dark:text-black border-neutral-900 dark:border-white"
+                  : "border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:border-neutral-900 dark:hover:border-white hover:text-neutral-900 dark:hover:text-white"
+              }`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        <ProjectGrid projects={filteredProjects} onViewDetails={setModalProject} />
+
+        {modalProject && <ProjectModal project={modalProject} onClose={() => setModalProject(null)} />}
       </div>
-
-      <ProjectGrid
-        projects={filteredProjects}
-        onViewDetails={setModalProject}
-      />
-
-      {modalProject && (
-        <ProjectModal project={modalProject} onClose={()=>setModalProject(null)} />
-      )}
-      
     </section>
   );
 }
