@@ -7,12 +7,12 @@ const ConnectPage = () => {
   return (
     <>
 
-   <section id="contact" className="w-full overflow-hidden bg-black text-[#E2DDB4]  px-4 md:px-16 py-16 flex flex-col items-center">
+   <section id="contact" className="w-full overflow-hidden bg-slate-50 dark:bg-black text-slate-900 dark:text-[#E2DDB4] px-4 md:px-16 py-16 flex flex-col items-center transition-colors duration-200">
       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
         Connect With Me
       </h2>
 
-      <p className="text-[#E2DDB4]/90 text-center mb-8 max-w-2xl">
+      <p className="text-slate-700 dark:text-[#E2DDB4]/90 text-center mb-8 max-w-2xl transition-colors duration-200">
         I'm always interested in collaborating on projects or freelance
         opportunities. Send me a message and I'll get back to you as soon as
         possible.
@@ -25,9 +25,9 @@ const ConnectPage = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Newton GitHub Account"
-          className="relative flex items-center group  overflow-hidden"
+          className="relative flex items-center group overflow-hidden text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-[#FFD700] transition-colors duration-200"
         >
-          <FaGithub className="group-hover:text-[#FFD700] transition-colors" />
+          <FaGithub />
       
         </a>
 
@@ -37,9 +37,9 @@ const ConnectPage = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Newton LinkedIn Profile"
-          className="relative flex items-center group"
+          className="relative flex items-center group text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-[#FFD700] transition-colors duration-200"
         >
-          <FaLinkedin className="group-hover:text-[#FFD700] transition-colors" />
+          <FaLinkedin />
           
         </a>
 
@@ -47,9 +47,9 @@ const ConnectPage = () => {
         <a
           href="mailto:newton.bepari.dev@gmail.com"
           aria-label="Newton Email Address"
-          className="relative flex items-center group"
+          className="relative flex items-center group text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-[#FFD700] transition-colors duration-200"
         >
-          <SiGmail className="group-hover:text-[#FFD700] transition-colors" />
+          <SiGmail />
          
         </a>
 
@@ -59,9 +59,9 @@ const ConnectPage = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Newton Instagram Profile"
-          className="relative flex items-center group"
+          className="relative flex items-center group text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-[#FFD700] transition-colors duration-200"
         >
-          <FaInstagram className="group-hover:text-[#FFD700] transition-colors" />
+          <FaInstagram />
           
         </a>
 
@@ -71,9 +71,9 @@ const ConnectPage = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Newton Twitter(X) Account"
-          className="relative flex items-center group"
+          className="relative flex items-center group text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-[#FFD700] transition-colors duration-200"
         >
-          <FaXTwitter className="group-hover:text-[#FFD700] transition-colors" />
+          <FaXTwitter />
           
         </a>
 
@@ -83,9 +83,9 @@ const ConnectPage = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Newton WhatsApp Account"
-          className="relative flex items-center group"
+          className="relative flex items-center group text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-[#FFD700] transition-colors duration-200"
         >
-          <FaWhatsapp className="group-hover:text-[#FFD700] transition-colors" />
+          <FaWhatsapp />
           
         </a>
       </div>

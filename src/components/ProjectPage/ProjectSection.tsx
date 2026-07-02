@@ -45,7 +45,7 @@ export default function ProjectSection() {
       : projects.filter((p) => p.category === activeTab);
 
   return (
-    <section id="projects" className="w-full bg-black text-[#E2DDB4] px-6 md:px-16 py-16">
+    <section id="projects" className="w-full bg-slate-50 dark:bg-black text-slate-900 dark:text-[#E2DDB4] px-6 md:px-16 py-16 transition-colors duration-200">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
        Featured Projects
       </h2>
@@ -57,8 +57,8 @@ export default function ProjectSection() {
             key={tab}
             className={`px-4 py-2 rounded-full font-semibold transition-colors cursor-pointer ${
               activeTab === tab
-                ? "bg-[#FFD700] text-black"
-                : "bg-[#1a1a1a] text-[#E2DDB4]/80 hover:bg-[#FFD700]/30 hover:text-[#FFD700]"
+                ? "bg-emerald-600 dark:bg-[#FFD700] text-white dark:text-black hover:bg-emerald-700 dark:hover:bg-[#FFC700]"
+                : "bg-slate-200 dark:bg-[#1a1a1a] text-slate-700 dark:text-[#E2DDB4]/80 hover:bg-slate-300 dark:hover:bg-[#FFD700]/30 hover:text-emerald-600 dark:hover:text-[#FFD700]"
             }`}
             onClick={() => setActiveTab(tab)}
           >
