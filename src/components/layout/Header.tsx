@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Menu, X } from "lucide-react";
 
 interface Tab {
   label: string;
@@ -17,12 +17,11 @@ const tabs: Tab[] = [
   { label: "Contact", href: "#contact" },
 ];
 
-const PRIMARY_ACCENT_COLOR = "#FFD700";
-
 export default function Header() {
   const headerRef = useRef<HTMLElement | null>(null);
   const [spacerHeight, setSpacerHeight] = useState(0);
   const [activeSection, setActiveSection] = useState("#home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (headerRef.current) {
@@ -49,21 +48,26 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 w-full py-4 flex justify-center bg-white/5 dark:bg-black/5 transition-colors duration-200" 
+        className="fixed top-0 left-0 right-0 z-50 w-full bg-slate-950 border-b border-slate-800 backdrop-blur-md"
       >
-        <nav 
-          className="flex items-center px-2 py-[1.8px] border rounded-3xl backdrop-blur-sm gap-2 transition-colors duration-200"
-          style={{ 
-            backgroundColor: 'rgba(255, 255, 255, 0.08)',
-            borderColor: 'rgba(100, 116, 139, 0.3)',
-          }}
-        >
-          {/* Navigation tabs */}
-          <div className="flex">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+          {/* Logo/Brand */}
+          <div className="flex-shrink-0 font-bold text-white text-xl">Newton</div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1">
             {tabs.map((tab) => {
               const isActive = activeSection === tab.href;
               return (
@@ -72,41 +76,65 @@ export default function Header() {
                   href={tab.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.querySelector(tab.href);
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
+                    handleNavClick(tab.href);
                   }}
-                  className="relative flex-1 px-4 py-2 rounded-3xl text-sm cursor-pointer transition-colors hover:bg-slate-200/20 dark:hover:bg-[#F6EFD2]/8"
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                    isActive
+                      ? "text-white bg-emerald-500/20 border border-emerald-500"
+                      : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                  }`}
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="active-tab"
-                      className={`absolute inset-0 rounded-3xl `}
-                      style={{ backgroundColor: PRIMARY_ACCENT_COLOR }}
-                      
-                      transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                    />
-                  )}
-                  <span 
-                    className={`relative z-10 font-medium transition-colors text-slate-900 dark:text-[#E2DDB4]`}
-                    style={{ color: isActive ? ' #000' : undefined }}
-                  >
-                    {tab.label}
-                  </span>
+                  {tab.label}
                 </a>
               );
             })}
-          </div>
+          </nav>
 
-          {/* Theme Toggle Button */}
-          <div className="border-l border-slate-300/30 dark:border-[#E2DDB4]/20 pl-2 ml-2">
+          {/* Right Side: Theme Toggle + Hamburger */}
+          <div className="flex items-center gap-4">
             <ThemeToggle />
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
-        </nav>
+        </div>
+
+        {/* Mobile Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-800">
+            <nav className="flex flex-col p-4 gap-2">
+              {tabs.map((tab) => {
+                const isActive = activeSection === tab.href;
+                return (
+                  <a
+                    key={tab.href}
+                    href={tab.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(tab.href);
+                    }}
+                    className={`px-4 py-3 rounded-lg font-medium transition-all ${
+                      isActive
+                        ? "text-white bg-emerald-500/20 border border-emerald-500"
+                        : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                    }`}
+                  >
+                    {tab.label}
+                  </a>
+                );
+              })}
+            </nav>
+          </div>
+        )}
       </header>
 
-      {/* Spacer pushes content down automatically */}
+      {/* Spacer */}
       <div style={{ height: spacerHeight }} />
     </>
   );

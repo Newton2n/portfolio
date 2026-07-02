@@ -9,10 +9,9 @@ interface ProjectGridProps {
 
 export default function ProjectGrid({ projects, onViewDetails }: ProjectGridProps) {
   return (
-    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-20 place-items-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
       {projects.map((project, i) => (
         <motion.div
-        className=" mx-auto flex justify-center"
           key={i}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

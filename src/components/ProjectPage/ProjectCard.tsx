@@ -33,10 +33,10 @@ export default function ProjectCard({
 
   return (
     <div
-      className="group relative block rounded-xl overflow-hidden border border-slate-300 dark:border-[#E2DDB4]/30 shadow-lg shadow-slate-400/30 dark:shadow-black/50 transition-all duration-300 hover:shadow-emerald-400/30 dark:hover:shadow-[#FFD700]/30 hover:scale-105 w-[300px] animate-in fade-in slide-in-from-bottom-2 duration-300"
+      className="group relative block rounded-lg overflow-hidden border border-slate-800 bg-slate-900/50 transition-all duration-300 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-105 w-[300px] animate-in fade-in slide-in-from-bottom-2 duration-300"
       onMouseEnter={playVideo}
       onMouseLeave={pauseVideo}
-      onClick={playVideo} 
+      onClick={playVideo}
     >
       {/* Thumbnail */}
       <Image
@@ -59,8 +59,8 @@ export default function ProjectCard({
       />
 
       {/* Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 dark:from-black/90 to-transparent px-4 py-3 transition-colors duration-200">
-        <h3 className="text-[15px] md:text-[16px] font-semibold mb-1 text-emerald-600 dark:text-[#FFD700] transition-all duration-300 group-hover:opacity-0">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent px-4 py-4">
+        <h3 className="text-[15px] md:text-[16px] font-semibold mb-2 text-emerald-400 group-hover:opacity-0 transition-opacity duration-300">
           {project.title}
         </h3>
 
@@ -70,14 +70,14 @@ export default function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View live demo of ${project.title} project`}
-            className="px-2 py-1 rounded text-white text-xs md:text-sm font-semibold border border-emerald-600 dark:border-[#FFD700] hover:bg-emerald-600 dark:hover:bg-[#FFD700]/90 hover:text-white dark:hover:text-black transition-colors duration-200"
+            className="px-3 py-1 rounded text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 transition-colors"
           >
             Live Project
           </a>
 
           <button
             onClick={() => onViewDetails(project)}
-            className="px-3 py-1 rounded bg-black/10 border border-emerald-600 dark:border-[#FFD700] text-emerald-600 dark:text-[#FFD700] text-xs md:text-sm font-semibold hover:bg-emerald-600 dark:hover:bg-[#FFD700] hover:text-white dark:hover:text-black transition-colors duration-200 cursor-pointer"
+            className="px-3 py-1 rounded text-sm font-semibold border border-emerald-500 text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500 hover:text-white transition-colors cursor-pointer"
           >
             View Details
           </button>

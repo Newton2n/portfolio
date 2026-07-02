@@ -17,45 +17,47 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="border-t border-slate-300 dark:border-[#E2DDB4]/30 text-slate-900 dark:text-[#E2DDB4] bg-slate-50 dark:bg-black transition-colors duration-200">
+      <footer className="border-t border-slate-800 bg-slate-950">
         <div className="md:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
           {/* Contact CTA */}
           <div className="max-w-2xl space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-bold">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Ready to build something
               <br />
-              <span className="text-emerald-600 dark:text-[#E2DDB4] transition-colors duration-200">amazing together?</span>
+              <span className="text-emerald-400">amazing together?</span>
             </h2>
-            <p className="text-slate-700 dark:text-[#E2DDB4]/80 text-lg transition-colors duration-200">
-              I'm always interested in hearing about new projects and
-              opportunities. Feel free to reach out!
+            <p className="text-slate-400 text-lg">
+              I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
             </p>
           </div>
-          {/* WhatsApp CTA */}{" "}
+
+          {/* WhatsApp CTA */}
           <div>
             <a
               href="https://wa.me/8801612676969"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Newton Whatsapp account"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 dark:bg-[#E2DDB4] text-white dark:text-black hover:bg-emerald-700 dark:hover:bg-[#d6d1a3] rounded-lg font-semibold transition-colors duration-200"
+              aria-label="WhatsApp"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-white hover:bg-emerald-600 rounded-lg font-semibold transition-colors"
             >
               <MdWhatsapp size={20} />
               Get In Touch
             </a>
           </div>
+
           {/* Divider */}
-          <div className="border-t border-slate-300 dark:border-[#E2DDB4]/30 transition-colors duration-200" />
+          <div className="border-t border-slate-800" />
+
           {/* Bottom Section */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             {/* Copyright */}
-            <div className="text-center sm:text-left text-slate-600 dark:text-[#E2DDB4]/70 text-sm transition-colors duration-200">
+            <div className="text-center sm:text-left text-slate-500 text-sm">
               <p>© {currentYear} Newton. All rights reserved.</p>
               <p>Crafted with care and precision.</p>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {socialLinks.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
@@ -63,7 +65,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-2 rounded-lg border border-slate-300 dark:border-[#E2DDB4]/40 text-slate-900 dark:text-[#E2DDB4] hover:border-emerald-600 dark:hover:border-[#E2DDB4] hover:text-emerald-600 dark:hover:text-[#E2DDB4] transition-colors duration-200"
+                  className="p-2 rounded-lg border border-slate-800 text-slate-400 hover:border-emerald-500 hover:text-emerald-400 transition-colors"
                 >
                   <Icon size={20} />
                 </a>

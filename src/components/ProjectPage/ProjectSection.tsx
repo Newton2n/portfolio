@@ -45,20 +45,18 @@ export default function ProjectSection() {
       : projects.filter((p) => p.category === activeTab);
 
   return (
-    <section id="projects" className="w-full bg-slate-50 dark:bg-black text-slate-900 dark:text-[#E2DDB4] px-6 md:px-16 py-16 transition-colors duration-200">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-       Featured Projects
-      </h2>
+    <section id="projects" className="w-full bg-slate-950 px-6 md:px-16 py-16">
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Featured Projects</h2>
 
       {/* Tabs */}
-      <div className="flex justify-center gap-6 mb-12">
+      <div className="flex justify-center gap-4 mb-12 flex-wrap">
         {(["All", "Front-end", "Full-stack"] as const).map((tab) => (
           <button
             key={tab}
-            className={`px-4 py-2 rounded-full font-semibold transition-colors cursor-pointer ${
+            className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
               activeTab === tab
-                ? "bg-emerald-600 dark:bg-[#FFD700] text-white dark:text-black hover:bg-emerald-700 dark:hover:bg-[#FFC700]"
-                : "bg-slate-200 dark:bg-[#1a1a1a] text-slate-700 dark:text-[#E2DDB4]/80 hover:bg-slate-300 dark:hover:bg-[#FFD700]/30 hover:text-emerald-600 dark:hover:text-[#FFD700]"
+                ? "bg-emerald-500 text-white hover:bg-emerald-600"
+                : "bg-slate-900/50 text-slate-400 border border-slate-800 hover:border-emerald-500 hover:text-emerald-400"
             }`}
             onClick={() => setActiveTab(tab)}
           >
@@ -67,15 +65,9 @@ export default function ProjectSection() {
         ))}
       </div>
 
-      <ProjectGrid
-        projects={filteredProjects}
-        onViewDetails={setModalProject}
-      />
+      <ProjectGrid projects={filteredProjects} onViewDetails={setModalProject} />
 
-      {modalProject && (
-        <ProjectModal project={modalProject} onClose={()=>setModalProject(null)} />
-      )}
-      
+      {modalProject && <ProjectModal project={modalProject} onClose={() => setModalProject(null)} />}
     </section>
   );
 }

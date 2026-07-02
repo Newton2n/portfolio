@@ -30,14 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${preahvihear.variable}`} suppressHydrationWarning>
-      <body className="antialiased min-h-screen bg-slate-50 dark:bg-black transition-colors duration-200">
+      <body className="antialiased min-h-screen bg-slate-950">
         <ThemeProviderWrapper>
-          <Analytics/>
+          <Analytics />
           <SplashCursor />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <ClientWrapper>    {children} </ClientWrapper>             
+          <div className="mx-auto">
+            <ClientWrapper>{children}</ClientWrapper>
           </div>
-           <Footer />
+          <Footer />
         </ThemeProviderWrapper>
       </body>
     </html>
