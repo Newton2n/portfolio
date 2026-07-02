@@ -33,7 +33,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className="group relative block rounded-xl overflow-hidden border border-slate-300 dark:border-[#E2DDB4]/30 shadow-lg shadow-slate-400/30 dark:shadow-black/50 transition-all duration-300 hover:shadow-emerald-400/30 dark:hover:shadow-[#FFD700]/30 hover:scale-105 w-[300px]"
+      className="group relative block rounded-xl overflow-hidden border border-slate-300 dark:border-[#E2DDB4]/30 shadow-lg shadow-slate-400/30 dark:shadow-black/50 transition-all duration-300 hover:shadow-emerald-400/30 dark:hover:shadow-[#FFD700]/30 hover:scale-105 w-[300px] animate-in fade-in slide-in-from-bottom-2 duration-300"
       onMouseEnter={playVideo}
       onMouseLeave={pauseVideo}
       onClick={playVideo} 

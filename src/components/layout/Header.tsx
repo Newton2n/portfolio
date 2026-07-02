@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -18,11 +17,9 @@ const tabs: Tab[] = [
   { label: "Contact", href: "#contact" },
 ];
 
-// Define the accent color for re-use
-const PRIMARY_ACCENT_COLOR = "#FFD700"; 
+const PRIMARY_ACCENT_COLOR = "#FFD700";
 
 export default function Header() {
-  const pathname = usePathname();
   const headerRef = useRef<HTMLElement | null>(null);
   const [spacerHeight, setSpacerHeight] = useState(0);
   const [activeSection, setActiveSection] = useState("#home");

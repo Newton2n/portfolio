@@ -1,39 +1,15 @@
-import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdWhatsapp } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
+
 const socialLinks = [
-  {
-    icon: FaGithub,
-    label: "Newton GitHub profile",
-    href: "https://github.com/Newton2n",
-  },
-  {
-    icon: FaLinkedin,
-    label: "Newton LinkedIn profile",
-    href: "https://www.linkedin.com/in/newton2n",
-  },
-  {
-    icon: FaXTwitter,
-    label: "Newton Twitter profile",
-    href: "https://x.com/NewtonYt66184",
-  },
-  {
-    icon: FaInstagram,
-    label: "Newton Instagram profile",
-    href: "https://www.instagram.com/webcre8or",
-  },
-  {
-    icon: FaWhatsapp,
-    label: "Newton Whatsapp profile",
-    href: "https://wa.me/8801612676969",
-  },
-  {
-    icon: SiGmail,
-    label: "Newton Email profile",
-    href: "mailto:newton.bepari.dev@gmail.com",
-  },
+  { icon: FaGithub, label: "GitHub", href: "https://github.com/Newton2n" },
+  { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/newton2n" },
+  { icon: FaXTwitter, label: "Twitter", href: "https://x.com/NewtonYt66184" },
+  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/webcre8or" },
+  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/8801612676969" },
+  { icon: SiGmail, label: "Email", href: "mailto:newton.bepari.dev@gmail.com" },
 ];
 
 export default function Footer() {
@@ -94,19 +70,8 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          {/* Quick Links */}
-          <div className="flex flex-wrap gap-4 text-sm text-slate-600 dark:text-[#E2DDB4]/70 transition-colors duration-200">
-            <Link href="/">Home</Link>
-            <span>·</span>
-            <Link href="/projects">Projects</Link>
-            <span>·</span>
-            <Link href="/about">About</Link>
-            <span>·</span>
-            <Link href="/connect">Connect</Link>
-          </div>
         </div>
       </footer>
     </>
-    
   );
 }
