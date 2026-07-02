@@ -33,7 +33,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className="group relative block rounded-lg overflow-hidden border border-slate-800 bg-slate-900/50 transition-all duration-300 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-105 w-[300px] animate-in fade-in slide-in-from-bottom-2 duration-300"
+      className="group relative block rounded overflow-hidden border border-slate-300 dark:border-slate-700 transition-all duration-300 hover:border-emerald-500 hover:shadow-md hover:shadow-emerald-500/30 hover:scale-105 w-[300px] bg-white dark:bg-black"
       onMouseEnter={playVideo}
       onMouseLeave={pauseVideo}
       onClick={playVideo}
@@ -60,27 +60,26 @@ export default function ProjectCard({
 
       {/* Overlay */}
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent px-4 py-4">
-        <h3 className="text-[15px] md:text-[16px] font-semibold mb-2 text-emerald-400 group-hover:opacity-0 transition-opacity duration-300">
+        <h3 className="text-sm font-semibold mb-3 text-white group-hover:opacity-0 transition-opacity duration-300">
           {project.title}
         </h3>
 
         <div className="flex gap-2">
+          <button
+            onClick={() => onViewDetails(project)}
+            className="px-3 py-1 rounded text-xs font-semibold bg-emerald-500 hover:bg-emerald-600 text-white transition-colors cursor-pointer"
+          >
+            View Details
+          </button>
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View live demo of ${project.title} project`}
-            className="px-3 py-1 rounded text-sm font-semibold bg-emerald-500 text-white hover:bg-emerald-600 transition-colors"
+            className="px-3 py-1 rounded text-xs font-semibold border border-white text-white hover:bg-white/10 transition-colors"
           >
-            Live Project
+            Live
           </a>
-
-          <button
-            onClick={() => onViewDetails(project)}
-            className="px-3 py-1 rounded text-sm font-semibold border border-emerald-500 text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500 hover:text-white transition-colors cursor-pointer"
-          >
-            View Details
-          </button>
         </div>
       </div>
     </div>

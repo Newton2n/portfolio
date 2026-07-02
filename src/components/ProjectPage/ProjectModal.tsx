@@ -15,12 +15,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-slate-900 border border-slate-800 rounded-lg w-full max-w-2xl overflow-hidden relative max-h-[90vh] flex flex-col"
+        className="bg-white dark:bg-black border border-slate-300 dark:border-slate-800 rounded w-full max-w-2xl overflow-hidden relative max-h-[90vh] flex flex-col transition-colors duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
-          className="absolute top-3 right-3 z-50 text-emerald-400 hover:text-emerald-300 text-2xl cursor-pointer transition-colors"
+          className="absolute top-4 right-4 z-50 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl cursor-pointer transition-colors"
           aria-label="Close project modal"
           onClick={onClose}
         >
@@ -42,40 +42,45 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           {/* Project Info */}
-          <div className="p-6 text-slate-300 flex-shrink-0 bg-slate-900">
-            <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-              <h3 className="text-xl md:text-2xl font-bold text-white">{project.title}</h3>
-              <div className="flex gap-2">
-                <a
-                  href={project.sourceCode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View source code of ${project.title} project`}
-                  className="px-3 py-1 rounded text-xs font-semibold border border-slate-600 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors"
-                >
-                  Code
-                </a>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View live demo of ${project.title} project`}
-                  className="px-3 py-1 rounded bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-600 transition-colors"
-                >
-                  Live Project
-                </a>
-              </div>
-            </div>
-            <p className="mb-4 text-slate-400">{project.description}</p>
+          <div className="p-8 bg-white dark:bg-black flex-shrink-0">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{project.title}</h3>
+            <p className="text-slate-700 dark:text-slate-300 mb-6">{project.description}</p>
+
+            {/* Tech Stack */}
             {project.tech && (
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, idx) => (
-                  <span key={idx} className="bg-emerald-500/20 border border-emerald-500 px-3 py-1 rounded text-xs text-emerald-300">
-                    {tech}
-                  </span>
-                ))}
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3 uppercase tracking-wide">Tech Stack</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, idx) => (
+                    <span key={idx} className="px-3 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500 rounded">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
+
+            {/* Links */}
+            <div className="flex gap-3 pt-4 border-t border-slate-300 dark:border-slate-800">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View live demo of ${project.title} project`}
+                className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded transition-colors"
+              >
+                Live Demo
+              </a>
+              <a
+                href={project.sourceCode}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View source code of ${project.title} project`}
+                className="px-4 py-2 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 text-sm font-semibold rounded transition-colors"
+              >
+                Source Code
+              </a>
+            </div>
           </div>
         </div>
       </div>

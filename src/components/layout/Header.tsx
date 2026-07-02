@@ -60,14 +60,11 @@ export default function Header() {
     <>
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 w-full bg-slate-950 border-b border-slate-800 backdrop-blur-md"
+        className="fixed top-0 left-0 right-0 z-50 w-full bg-white dark:bg-black border-b border-slate-200 dark:border-slate-800 transition-colors duration-200"
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
-          {/* Logo/Brand */}
-          <div className="flex-shrink-0 font-bold text-white text-xl">Newton</div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
+          {/* Left: Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
             {tabs.map((tab) => {
               const isActive = activeSection === tab.href;
               return (
@@ -78,10 +75,10 @@ export default function Header() {
                     e.preventDefault();
                     handleNavClick(tab.href);
                   }}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                  className={`text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-white bg-emerald-500/20 border border-emerald-500"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                      ? "text-emerald-500 dark:text-emerald-500"
+                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                   }`}
                 >
                   {tab.label}
@@ -90,25 +87,25 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right Side: Theme Toggle + Hamburger */}
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
+          {/* Mobile Navigation Toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-slate-700 dark:text-slate-300"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+          {/* Right: Theme Toggle */}
+          <div className="ml-auto md:ml-0">
+            <ThemeToggle />
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-800">
-            <nav className="flex flex-col p-4 gap-2">
+          <div className="md:hidden bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800">
+            <nav className="flex flex-col px-6 py-4 gap-4">
               {tabs.map((tab) => {
                 const isActive = activeSection === tab.href;
                 return (
@@ -119,10 +116,10 @@ export default function Header() {
                       e.preventDefault();
                       handleNavClick(tab.href);
                     }}
-                    className={`px-4 py-3 rounded-lg font-medium transition-all ${
+                    className={`text-sm font-medium transition-colors ${
                       isActive
-                        ? "text-white bg-emerald-500/20 border border-emerald-500"
-                        : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                        ? "text-emerald-500"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                     }`}
                   >
                     {tab.label}

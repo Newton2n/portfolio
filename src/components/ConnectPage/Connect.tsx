@@ -1,42 +1,72 @@
 
-import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram, FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
+
 const ConnectPage = () => {
   return (
-    <>
+    <section id="contact" className="w-full px-6 md:px-10 py-16 md:py-24 bg-slate-50 dark:bg-slate-950/50 transition-colors duration-200">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Get In Touch</h2>
+        <p className="text-slate-700 dark:text-slate-300 mb-12 max-w-2xl">
+          I'm interested in freelance opportunities, collaborations, and new projects. Feel free to reach out!
+        </p>
 
-   <section id="contact" className="w-full bg-slate-950 px-4 md:px-16 py-16 flex flex-col items-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-white">Connect With Me</h2>
+        {/* Contact Info Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Email */}
+          <div className="border border-slate-300 dark:border-slate-700 rounded p-6 bg-white dark:bg-black">
+            <div className="flex items-center gap-3 mb-3">
+              <MdEmail className="text-emerald-500 text-2xl" />
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Email</h3>
+            </div>
+            <a href="mailto:newton.bepari.dev@gmail.com" className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
+              newton.bepari.dev@gmail.com
+            </a>
+          </div>
 
-      <p className="text-slate-400 text-center mb-12 max-w-2xl">
-        I'm always interested in collaborating on projects or freelance opportunities. Reach out and let's build something amazing together.
-      </p>
+          {/* Phone */}
+          <div className="border border-slate-300 dark:border-slate-700 rounded p-6 bg-white dark:bg-black">
+            <div className="flex items-center gap-3 mb-3">
+              <FaPhone className="text-emerald-500 text-xl" />
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Phone</h3>
+            </div>
+            <a href="tel:+8801612676969" className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
+              +880 161 267 6969
+            </a>
+          </div>
+        </div>
 
-      <div className="flex flex-wrap justify-center max-w-full gap-6 text-2xl">
-        <a href="https://github.com/Newton2n" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-400 hover:text-emerald-400 transition-colors">
-          <FaGithub />
+        {/* WhatsApp CTA */}
+        <a
+          href="https://wa.me/8801612676969"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded mb-12 transition-colors"
+        >
+          Message on WhatsApp
         </a>
-        <a href="https://www.linkedin.com/in/newton2n" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-400 hover:text-emerald-400 transition-colors">
-          <FaLinkedin />
-        </a>
-        <a href="mailto:newton.bepari.dev@gmail.com" aria-label="Email" className="text-slate-400 hover:text-emerald-400 transition-colors">
-          <SiGmail />
-        </a>
-        <a href="https://www.instagram.com/webcre8or" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-400 hover:text-emerald-400 transition-colors">
-          <FaInstagram />
-        </a>
-        <a href="https://x.com/NewtonYt66184" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-slate-400 hover:text-emerald-400 transition-colors">
-          <FaXTwitter />
-        </a>
-        <a href="https://wa.me/8801612676969" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-slate-400 hover:text-emerald-400 transition-colors">
-          <FaWhatsapp />
-        </a>
+
+        {/* Social Links */}
+        <div>
+          <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 uppercase tracking-wide">Follow Me</h3>
+          <div className="flex gap-4 text-2xl">
+            <a href="https://github.com/Newton2n" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/newton2n" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
+              <FaLinkedin />
+            </a>
+            <a href="https://x.com/NewtonYt66184" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
+              <FaXTwitter />
+            </a>
+            <a href="https://www.instagram.com/webcre8or" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-    
-    </>
   );
 };
 
