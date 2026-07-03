@@ -44,9 +44,16 @@ const Hero = () => {
           </h1>
 
           <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed max-w-md">
-            I build scalable backend systems and complete full-stack
-            applications. Focused on system design, performance, and clean code
-            architecture.
+            I specialize in{" "}
+            <span className="font-semibold text-neutral-900 dark:text-white">
+              Express.js
+            </span>{" "}
+            backends and{" "}
+            <span className="font-semibold text-neutral-900 dark:text-white">
+              Next.js
+            </span>{" "}
+            full-stack applications. Focused on clean architecture,
+            high-performance design, and scalable system logic.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-6">

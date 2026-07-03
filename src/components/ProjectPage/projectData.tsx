@@ -17,6 +17,8 @@ const projects: Project[] = [
       auth: "JWT + HTTP-only Cookies",
       database: "PostgreSQL",
       tokenLifetimes: "Access (1hr) / Refresh (7 days)",
+      latency: "Optimized Prisma Query",
+      throughput: "Stable Prisma Postgres",
       endpoints: [
         "/api/auth/login", "/api/auth/refresh-token",
         "/api/users/register", "/api/users/me",
@@ -52,7 +54,11 @@ const projects: Project[] = [
     sourceCode: "#",
     features: [],
     challenges: [],
-    futureImprovements: []
+    futureImprovements: [],
+    backendMetrics :{
+      latency: "!!",
+      throughput: "!!",
+    }
   },
   {
     title: "Full Stack Social Media",
