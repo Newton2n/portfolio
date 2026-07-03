@@ -17,7 +17,7 @@ const SkillsPage = () => {
     },
     {
       title: "Tools & Infrastructure",
-      skills: ["Git / GitHub", "Stripe API", "CI/CD Pipelines", "Docker (Basics)", "Postman", "Vercel Deployment"]
+      skills: ["Git / GitHub", "Stripe API", "CI/CD Pipelines","Postman", "Vercel Deployment"]
     }
   ];
 
@@ -28,7 +28,7 @@ const SkillsPage = () => {
         {/* Header */}
         <div className="mb-20">
           <h2 className="text-4xl md:text-6xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight">
-            Engineering Matrix
+            Technical Foundation
           </h2>
           <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl">
             A deep dive into the technologies I use to build scalable, secure, and production-ready applications.

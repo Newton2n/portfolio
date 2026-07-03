@@ -1,45 +1,108 @@
 "use client";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { IoMdClose as CloseIcon } from "react-icons/io";
+// Import skill icons
+import {
+  SiExpress,
+  SiNodedotjs,
+  SiNextdotjs,
+  SiTypescript,
+  SiPostgresql,
+  SiPrisma,
+} from "react-icons/si";
 
 const AboutPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Aligned with your specific Express/Full-Stack toolkit
-  const technicalSkills = ["Express.js", "Node.js", "Next.js","TypeScript", "PostgreSQL", "Prisma"];
-  
+  // Map skills to their icons
+  const skillIcons: { [key: string]: JSX.Element } = {
+    "Express.js": <SiExpress />,
+    "Node.js": <SiNodedotjs />,
+    "Next.js": <SiNextdotjs />,
+    TypeScript: <SiTypescript />,
+    PostgreSQL: <SiPostgresql />,
+    Prisma: <SiPrisma />,
+  };
+
+  const technicalSkills = [
+    "Express.js",
+    "Node.js",
+    "Next.js",
+    "TypeScript",
+    "PostgreSQL",
+    "Prisma",
+  ];
+
   const stats = [
     { number: "03+", label: "Years Project Experience" },
-    { number: "08+", label: "Integrated Techs" },
+    { number: "08+", label: "Tech Stack" },
     { number: "07+", label: "Total Projects" },
   ];
 
   return (
     <>
-      <section id="about" className="w-full px-6 md:px-12 py-20 md:py-32 bg-white dark:bg-black transition-colors duration-200">
+      <section
+        id="about"
+        className="w-full px-6 md:px-12 py-20 md:py-32 bg-white dark:bg-black transition-colors duration-200"
+      >
         <div className="max-w-5xl mx-auto">
-          
           <div className="mb-20">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-neutral-900 dark:text-white mb-6 tracking-tight leading-none">
-              Engineering Scalable Logic
+            <h2 className="text-4xl md:text-6xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight leading-none">
+              About Me
             </h2>
             <p className="text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-medium leading-relaxed max-w-4xl">
-              <span className="font-extrabold text-neutral-950 dark:text-white">Express.js Developer</span> & full-stack architect. I build secure server-side foundations and high-performance user interfaces.
+              <span className="font-extrabold text-neutral-950 dark:text-white">
+                Tech explorer & developer.
+              </span>{" "}
+              I love diving deep into how things work, using{" "}
+              <span className="font-extrabold text-neutral-950 dark:text-white">
+                Next.js and Express.js
+              </span>{" "}
+              to bridge the gap between{" "}
+              <span className="font-extrabold text-neutral-950 dark:text-white">
+                cutting-edge hardware
+              </span>{" "}
+              and high-performance software.
             </p>
           </div>
 
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-20">
-            
-            <div className="md:col-span-7 space-y-6">
+            <div className="md:col-span-7 space-y-8">
               <h3 className="text-sm font-bold text-neutral-950 dark:text-white uppercase tracking-widest border-b-2 border-neutral-900 dark:border-white pb-2 inline-block">
-                Technical Specialization
+                My Programming Journey
               </h3>
-              <p className="text-base md:text-lg text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
-                I specialize in the <span className="font-extrabold text-neutral-950 dark:text-white">Express.js ecosystem</span>, crafting secure and modular backend systems. From building RESTful API architectures to complex database modeling with <span className="font-extrabold text-neutral-950 dark:text-white">Prisma and PostgreSQL</span>, I focus on creating server-side logic that is both maintainable and performant.
-              </p>
-              <p className="text-base md:text-lg text-neutral-800 dark:text-neutral-300 leading-relaxed font-normal">
-                My full-stack approach seamlessly integrates server logic with modern frontend frameworks like <span className="font-extrabold text-neutral-950 dark:text-white">Next.js and Tailwind CSS</span>. Whether it's implementing secure <span className="font-extrabold text-neutral-950 dark:text-white">Stripe payment workflows</span> or managing state via TypeScript, I bridge the gap between robust data processing and seamless user experiences.
-              </p>
+              <div className="space-y-6 text-base md:text-lg text-neutral-800 dark:text-neutral-300 leading-relaxed">
+                <p>
+                  My journey began as a{" "}
+                  <span className="font-extrabold text-neutral-950 dark:text-white">
+                    self-taught pursuit
+                  </span>
+                  , now refined by a{" "}
+                  <span className="font-extrabold text-neutral-950 dark:text-white">
+                    formal professional curriculum
+                  </span>
+                  . This blend of self-directed exploration and structured
+                  learning has given me a unique perspective on solving complex
+                  technical problems.
+                </p>
+                <p>
+                  Beyond code, I have a long-standing fascination with the
+                  technology that shapes our world. I love the thrill of
+                  "deep-diving" into new innovations—whether it is the latest
+                  advancements in mobile tech, the architecture of a new laptop,
+                  or exploring emerging tools. I am not just a user of
+                  technology; I am an explorer who loves to understand how new
+                  gadgets and systems are built and what makes them tick.
+                </p>
+                <p>
+                  When I am not in front of a terminal, I recharge through{" "}
+                  <span className="font-extrabold text-neutral-950 dark:text-white">
+                    competitive cricket and football
+                  </span>
+                  . These sports keep me energized and provide the mental
+                  clarity I need to approach my next engineering challenge.
+                </p>
+              </div>
             </div>
 
             <div className="md:col-span-5 flex flex-col justify-center">
@@ -48,41 +111,91 @@ const AboutPage = () => {
                   <div className="w-3 h-3 rounded-full bg-neutral-400 dark:bg-neutral-700" />
                   <div className="w-3 h-3 rounded-full bg-neutral-400 dark:bg-neutral-700" />
                   <div className="w-3 h-3 rounded-full bg-neutral-400 dark:bg-neutral-700" />
-                  <span className="ml-2 font-sans font-bold text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400">api_config.sh</span>
+                  <span className="ml-2 font-sans font-bold text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                    profile_config.sh
+                  </span>
                 </div>
                 <div className="space-y-2 text-sm leading-relaxed font-semibold">
-                  <p><span className="text-neutral-400 dark:text-neutral-600 mr-2">1</span><span className="text-neutral-900 dark:text-white">const</span> server = &#123;</p>
-                  <p><span className="text-neutral-400 dark:text-neutral-600 mr-2">2</span>&nbsp;&nbsp;framework: <span className="text-neutral-900 dark:text-neutral-100">&quot;Express.js&quot;</span>,</p>
-                  <p><span className="text-neutral-400 dark:text-neutral-600 mr-2">3</span>&nbsp;&nbsp;orm: <span className="text-neutral-900 dark:text-neutral-100">&quot;Prisma/PostgreSQL&quot;</span>,</p>
-                  <p><span className="text-neutral-400 dark:text-neutral-600 mr-2">4</span>&nbsp;&nbsp;payments: <span className="text-neutral-900 dark:text-neutral-100">&quot;Stripe Ready&quot;</span></p>
-                  <p><span className="text-neutral-400 dark:text-neutral-600 mr-2">5</span>&#125;;</p>
+                  <p>
+                    <span className="text-neutral-400 dark:text-neutral-600 mr-2">
+                      1
+                    </span>
+                    <span className="text-neutral-900 dark:text-white">
+                      const
+                    </span>{" "}
+                    developer = &#123;
+                  </p>
+                  <p>
+                    <span className="text-neutral-400 dark:text-neutral-600 mr-2">
+                      2
+                    </span>
+                    &nbsp;&nbsp;status:{" "}
+                    <span className="text-neutral-900 dark:text-neutral-100">
+                      &quot;Active Learner&quot;
+                    </span>
+                    ,
+                  </p>
+                  <p>
+                    <span className="text-neutral-400 dark:text-neutral-600 mr-2">
+                      3
+                    </span>
+                    &nbsp;&nbsp;learning:{" "}
+                    <span className="text-neutral-900 dark:text-neutral-100">
+                      &quot;Formal Curriculum&quot;
+                    </span>
+                    ,
+                  </p>
+                  <p>
+                    <span className="text-neutral-400 dark:text-neutral-600 mr-2">
+                      4
+                    </span>
+                    &nbsp;&nbsp;focus:{" "}
+                    <span className="text-neutral-900 dark:text-neutral-100">
+                      &quot;Backend/Hardware&quot;
+                    </span>
+                  </p>
+                  <p>
+                    <span className="text-neutral-400 dark:text-neutral-600 mr-2">
+                      5
+                    </span>
+                    &#125;;
+                  </p>
                 </div>
-                <button 
+                <button
                   onClick={() => setIsModalOpen(true)}
                   className="w-full text-center py-3 mt-2 block border-2 border-neutral-900 dark:border-white bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-black font-sans font-bold text-sm tracking-wide transition-all rounded shadow active:scale-[0.98] cursor-pointer"
                 >
-                  View Engineering Matrix
+                  View Professional Matrix
                 </button>
               </div>
             </div>
           </div>
 
+          {/* Skills & Stats */}
           <div className="space-y-16">
-            <div className="pb-12 border-b-2 border-neutral-200 dark:border-neutral-800">
-              <h4 className="text-sm font-bold text-neutral-950 dark:text-white mb-8 uppercase tracking-widest">
-                Core Skills
-              </h4>
-              <div className="flex flex-wrap gap-y-4 items-center">
-                {technicalSkills.map((skill, index) => (
-                  <div key={skill} className="flex items-center">
-                    <span className="text-neutral-900 dark:text-white font-bold text-base md:text-lg tracking-wide">{skill}</span>
-                    {index < technicalSkills.length - 1 && (
-                      <div className="w-[2px] h-5 bg-neutral-300 dark:bg-neutral-700 mx-5 md:mx-8"></div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+         <div className="pb-12 border-b-2 border-neutral-200 dark:border-neutral-800">
+  <div className="mb-8">
+    <h4 className="text-sm font-bold text-neutral-950 dark:text-white uppercase tracking-widest border-l-4 border-neutral-900 dark:border-white pl-4">
+      Technical Specialization
+    </h4>
+  </div>
+
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+    {technicalSkills.map((skill) => (
+      <div 
+        key={skill} 
+        className="flex items-center gap-3 p-3 rounded-lg border border-transparent hover:border-neutral-200 dark:hover:border-neutral-800 transition-all duration-300"
+      >
+        <div className="text-2xl text-neutral-900 dark:text-white">
+          {skillIcons[skill]}
+        </div>
+        <span className="text-neutral-700 dark:text-neutral-300 font-semibold text-sm uppercase tracking-wide">
+          {skill}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
 
             <div className="grid grid-cols-3 gap-6 text-left">
               {stats.map((stat) => (
@@ -103,20 +216,30 @@ const AboutPage = () => {
       {/* Modal Details */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div onClick={() => setIsModalOpen(false)} className="absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity" />
+          <div
+            onClick={() => setIsModalOpen(false)}
+            className="absolute inset-0 bg-black/70 backdrop-blur-md"
+          />
           <div className="relative w-full max-w-xl rounded border-2 border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black p-8 md:p-10 shadow-2xl space-y-6 z-10 text-neutral-900 dark:text-white animate-in fade-in zoom-in-95 duration-150">
-            <button onClick={() => setIsModalOpen(false)} className="absolute top-5 right-5 p-2 border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700 rounded text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-5 right-5 p-2 rounded text-neutral-500 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
+            >
               <CloseIcon className="text-2xl" />
             </button>
-            <div className="space-y-4">
-              <h3 className="text-2xl font-black tracking-tight border-b-2 border-neutral-100 dark:border-neutral-900 pb-3">
-                Full-Stack Architecture
-              </h3>
-              <div className="pt-2 space-y-4 text-base md:text-lg leading-relaxed text-neutral-800 dark:text-neutral-200 font-normal">
-                <p>I build systems with <span className="font-extrabold text-neutral-950 dark:text-white">Express.js</span> at the core, utilizing Prisma for type-safe database migrations and relations.</p>
-                <p>From secure authentication flows to <span className="font-extrabold text-neutral-950 dark:text-white">Stripe-integrated billing systems</span>, I ensure every line of code contributes to a performant, reliable, and scalable production environment.</p>
-              </div>
-            </div>
+            <h3 className="text-2xl font-black tracking-tight border-b-2 border-neutral-100 dark:border-neutral-900 pb-3">
+              Professional Matrix
+            </h3>
+            <p className="text-base md:text-lg text-neutral-800 dark:text-neutral-200">
+              I am currently sharpening my skills through a{" "}
+              <span className="font-extrabold text-neutral-950 dark:text-white">
+                formal professional curriculum
+              </span>{" "}
+              to build robust and efficient systems. My focus is on writing code
+              that is not just functional, but architectural—optimizing for high
+              performance, reliability, and long-term scalability in every
+              project I develop.
+            </p>
           </div>
         </div>
       )}

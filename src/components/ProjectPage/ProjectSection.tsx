@@ -46,8 +46,8 @@ export default function ProjectSection() {
       className="w-full px-6 md:px-10 py-16 md:py-24 bg-white dark:bg-black transition-colors duration-200"
     >
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-black text-neutral-900 dark:text-white mb-2 tracking-tight">
-          Featured Architecture
+        <h2 className="text-4xl md:text-6xl font-black text-neutral-900 dark:text-white mb-6 tracking-tight">
+          System Implementations
         </h2>
         <p className="text-neutral-500 dark:text-neutral-400 text-sm font-medium mb-12">
           System frameworks engineered for absolute stability, performance, and
