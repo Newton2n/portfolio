@@ -57,13 +57,13 @@ const ConnectPage = () => {
           <div className="flex gap-4">
             <button 
               type="submit" 
-              className="flex-1 bg-neutral-900 dark:bg-white text-white dark:text-black font-bold py-4 rounded hover:opacity-80 transition-opacity"
+              className="flex-1 bg-neutral-900 dark:bg-white text-white dark:text-black font-bold py-4 rounded hover:opacity-80 transition-opacity cursor-pointer"
             >
               Send Message
             </button>
             <button 
               type="reset" 
-              className="px-8 py-4 border-2 border-neutral-200 dark:border-neutral-800 rounded font-bold text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              className="px-8 py-4 border-2 border-neutral-200 dark:border-neutral-800 rounded font-bold text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
             >
               Clear All
             </button>
