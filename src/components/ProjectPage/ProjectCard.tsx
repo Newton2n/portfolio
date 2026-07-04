@@ -8,7 +8,10 @@ interface ProjectCardProps {
   onViewDetails: (project: Project) => void;
 }
 
-export default function ProjectCard({ project, onViewDetails }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  onViewDetails,
+}: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
@@ -55,21 +58,38 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
               {project.title}
             </p>
             <div className="pt-1 text-neutral-500 dark:text-neutral-400 space-y-0.5 line-clamp-3 font-medium">
-              <div>• Latency: <span className="text-emerald-500 font-bold">{project.backendMetrics?.latency || "140ms"}</span></div>
-              <div>• Load cap: <span className="text-neutral-900 dark:text-white">{project.backendMetrics?.throughput || "10k/min"}</span></div>
-              <div>• Layer: <span className="text-neutral-900 dark:text-white">{project.backendMetrics?.architecture || "REST API"}</span></div>
+              <div>
+                • Latency:{" "}
+                <span className="text-emerald-500 font-bold">
+                  {project.backendMetrics?.latency || "140ms"}
+                </span>
+              </div>
+              <div>
+                • Load cap:{" "}
+                <span className="text-neutral-900 dark:text-white">
+                  {project.backendMetrics?.throughput || "10k/min"}
+                </span>
+              </div>
+              <div>
+                • Layer:{" "}
+                <span className="text-neutral-900 dark:text-white">
+                  {project.backendMetrics?.architecture || "REST API"}
+                </span>
+              </div>
             </div>
           </div>
-          
+
           {/* BOTTOM TERMINAL FOOTER STRIP WITH EXPLICIT DETAILS BUTTON */}
           <div className="text-[10px] text-neutral-400 dark:text-neutral-500 border-t border-neutral-200 dark:border-neutral-900 pt-2 flex justify-between items-center bg-transparent z-10">
-            <span className="truncate max-w-[140px]">{project.tech?.slice(0, 3).join(" | ")}</span>
+            <span className="truncate max-w-[140px]">
+              {project.tech?.slice(0, 3).join(" | ")}
+            </span>
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 onViewDetails(project);
               }}
-              className="px-2 py-0.5 rounded font-sans text-[10px] font-bold bg-neutral-900 text-white dark:bg-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors shadow-sm cursor-pointer"
+              className="px-2 py-0.5 rounded font-sans text-[10px] font-bold bg-neutral-900 text-white dark:bg-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all duration-200 shadow-sm hover:shadow-lg hover:scale-[1.02] cursor-pointer"
             >
               More Details →
             </button>
@@ -116,7 +136,7 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
                 e.stopPropagation();
                 onViewDetails(project);
               }}
-              className="px-2 py-1 rounded text-[10px] font-bold bg-neutral-900 dark:bg-white text-white dark:text-black hover:bg-neutral-800 transition-colors "
+              className="px-2 py-1 rounded text-[10px] font-bold bg-neutral-900 dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all duration-200 hover:shadow-lg cursor-pointer"
             >
               Details
             </button>
@@ -126,7 +146,7 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="px-2 py-1 rounded text-[10px] font-bold border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 transition-colors"
+                className="px-2 py-1 rounded text-[10px] font-bold border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white transition-all duration-200 hover:shadow-sm cursor-pointer"
               >
                 Live
               </a>

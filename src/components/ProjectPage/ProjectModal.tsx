@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef } from "react";
 import { Project } from "./ProjectCardTypes";
 import { IoMdClose } from "react-icons/io";
 
@@ -8,12 +9,23 @@ interface Props {
 }
 
 export default function ProjectModal({ project, onClose }: Props) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (project.video && videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {});
+      }
+    }
+  }, [project.video]);
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer"
       />
 
       {/* Modal Container */}
@@ -32,6 +44,21 @@ export default function ProjectModal({ project, onClose }: Props) {
         <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">
           {project.category}
         </span>
+        {project.video && (
+          <div className="mt-6 overflow-hidden rounded-3xl border border-neutral-200 dark:border-neutral-800">
+            <video
+              ref={videoRef}
+              src={project.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full h-60 md:h-72 object-cover bg-black"
+              aria-label={`Project demo video for ${project.title}`}
+            />
+          </div>
+        )}
         {/* Core Details Section */}
         <div className="mt-6 border-y border-neutral-100 dark:border-neutral-900 py-4 space-y-3">
           <h4 className="font-bold text-xs uppercase tracking-wider text-neutral-900 dark:text-white">
@@ -153,12 +180,12 @@ export default function ProjectModal({ project, onClose }: Props) {
 
         {/* ... (Keep existing Action Links) */}
         {/* Action Links */}
-        <div className="mt-8 flex gap-4">
+        <div className="mt-8 flex flex-wrap gap-4">
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-black font-bold text-xs rounded transition-all hover:opacity-80"
+            className="px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-black font-bold text-xs rounded transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer"
           >
             Live Demo
           </a>
@@ -166,7 +193,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             href={project.sourceCode}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-neutral-200 dark:border-neutral-800 text-xs font-bold rounded transition-all hover:border-neutral-900 dark:hover:border-white"
+            className="px-4 py-2 border border-neutral-200 dark:border-neutral-800 text-xs font-bold rounded transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:border-neutral-900 dark:hover:border-white cursor-pointer"
           >
             Source Code
           </a>
