@@ -7,7 +7,7 @@ export function ThemeProviderWrapper({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="system"
       enableSystem
       disableTransitionOnChange={false}
       storageKey="portfolio-theme"
