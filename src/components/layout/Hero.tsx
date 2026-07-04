@@ -82,7 +82,7 @@ const Hero = () => {
                 { Icon: FaXTwitter, href: "https://x.com/newtonbepari" },
                 {
                   Icon: FaFacebook,
-                  href: "https://www.facebook.com/newton.bepari",
+                  href: "https://www.facebook.com/newtonbepari96",
                 },
               ].map(({ Icon, href }, i) => (
                 <a
