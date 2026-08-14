@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Preahvihear } from "next/font/google";
 import "./globals.css";
 
+
 import ClientWrapper from "@/components/layout/ClientWrapper";
 import Footer from "@/components/layout/Footer";
 import { ThemeProviderWrapper } from "@/providers/ThemeProvider";
