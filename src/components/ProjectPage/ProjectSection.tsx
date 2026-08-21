@@ -6,10 +6,10 @@ import projects from "./projectData";
 import { Project } from "./ProjectCardTypes";
 
 export default function ProjectSection() {
-  // Sets Backend as the highlighted, default loaded recruiter view tab
+  // Sets Full-stack as the highlighted, default loaded recruiter view tab
   const [activeTab, setActiveTab] = useState<
     "Backend" | "Front-end" | "Full-stack" | "All"
-  >("Backend");
+  >("Full-stack");
   const [modalProject, setModalProject] = useState<Project | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [visibleCount, setVisibleCount] = useState(3);

@@ -178,25 +178,49 @@ export default function ProjectModal({ project, onClose }: Props) {
           </div>
         )}
 
-        {/* ... (Keep existing Action Links) */}
         {/* Action Links */}
         <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-black font-bold text-xs rounded transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer"
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.sourceCode}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 border border-neutral-200 dark:border-neutral-800 text-xs font-bold rounded transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:border-neutral-900 dark:hover:border-white cursor-pointer"
-          >
-            Source Code
-          </a>
+          {project.link && project.link !== "#" && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-black font-bold text-xs rounded transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer"
+            >
+              Live Demo
+            </a>
+          )}
+          {project.sourceCode && project.sourceCode !== "#" && (
+            <a
+              href={project.sourceCode}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 border border-neutral-200 dark:border-neutral-800 text-xs font-bold rounded transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:border-neutral-900 dark:hover:border-white cursor-pointer"
+            >
+              Source Code
+            </a>
+          )}
+          {/* New Backend Specific Links */}
+          {project.backendLink && project.backendLink !== "#" && (
+            <a
+              href={project.backendLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-neutral-800 dark:bg-neutral-200 text-white dark:text-black font-bold text-xs rounded transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer"
+            >
+              Backend Live
+            </a>
+          )}
+          {project.backendSourceCode && project.backendSourceCode !== "#" && (
+            <a
+              href={project.backendSourceCode}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 border border-neutral-300 dark:border-neutral-700 text-xs font-bold rounded transition-all duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:border-neutral-900 dark:hover:border-white cursor-pointer"
+            >
+              Backend Repo
+            </a>
+          )}
         </div>
       </div>
     </div>

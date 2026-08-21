@@ -1,91 +1,228 @@
 import { Project } from "./ProjectCardTypes";
 
 const projects: Project[] = [
-  // Existing Projects
-  {
-    title: "Prisma Press Backend",
-    category: "Backend",
-    description: "A modular blog backend built with Express 5, TypeScript, Prisma 7.x, and PostgreSQL. Provides API for auth, profiles, posts, comments, and admin reporting.",
-    tech: ["Node.js", "TypeScript", "Express 5", "Prisma 7.x", "PostgreSQL", "JWT"],
-    link: "https://github.com/Newton2n/prisma-press",
-    sourceCode: "https://github.com/Newton2n/prisma-press",
-    features: ["JWT-based Auth", "RBAC", "Full CRUD", "Admin moderation"],
-    challenges: ["Translating Prisma errors to HTTP responses", "Managing secure HTTP-only cookies"],
-    futureImprovements: ["Add Zod validation", "Automated integration testing"],
-    backendMetrics: {
-      architecture: "Modular Express Architecture",
-      auth: "JWT + HTTP-only Cookies",
-      database: "PostgreSQL",
-      tokenLifetimes: "Access (1hr) / Refresh (7 days)",
-      latency: "Optimized Prisma Query",
-      throughput: "Stable Prisma Postgres",
-      endpoints: [
-        "/api/auth/login", "/api/auth/refresh-token",
-        "/api/users/register", "/api/users/me",
-        "/api/posts", "/api/posts/stats",
-        "/api/comments/:commentId/moderate"
-      ]
-    }
-  },
   {
     title: "DevPulse: Tech Issue & Feature Tracker",
     category: "Backend",
-    description: "A collaborative platform for software teams to report bugs and suggest features. Features role-based permissions and raw SQL query integration.",
-    tech: ["Node.js", "TypeScript", "Express.js", "PostgreSQL", "NeonDB", "JWT"],
+    description:
+      "A collaborative issue and feature tracking platform for software teams. Includes role-based permissions, protected API endpoints, PostgreSQL persistence, and raw SQL query integration.",
+    tech: [
+      "Node.js",
+      "TypeScript",
+      "Express.js",
+      "PostgreSQL",
+      "NeonDB",
+      "JWT",
+    ],
     link: "https://devpulse-api-iota.vercel.app/",
     sourceCode: "https://github.com/Newton2n/dev-pulse",
-    features: ["RBAC", "Protected API endpoints", "Raw SQL integration"],
-    challenges: ["Optimizing raw SQL query performance", "Managing database connection pooling"],
+    features: [
+      "Role-based access control",
+      "Protected API endpoints",
+      "Issue and feature management",
+      "Raw SQL query integration",
+      "PostgreSQL connection pooling",
+    ],
+    challenges: [
+      "Optimizing raw SQL query performance",
+      "Managing database connection pooling",
+      "Designing permission-based API access",
+    ],
     futureImprovements: ["Implement Redis caching", "Add GitHub OAuth"],
     backendMetrics: {
       throughput: "Stable PostgreSQL Pool",
-      latency: "Optimized SQL execution",
+      latency: "Optimized SQL Execution",
       architecture: "Modular Express Router",
-      endpoints: ["/api/auth/signup", "/api/issues", "/api/issues/:id"]
-    }
+      endpoints: ["/api/auth/signup", "/api/issues", "/api/issues/:id"],
+    },
   },
-  // New "In Progress" Demo Project
+
   {
-    title: "",
-    category: "Backend",
-    description: "",
-    tech: [],
-    link: "#",
-    sourceCode: "#",
-    features: [],
-    challenges: [],
-    futureImprovements: [],
-    backendMetrics :{
-      latency: "!!",
-      throughput: "!!",
-    }
+    title: "FixItNow",
+    category: "Full-stack",
+    image: "/image/fix-it-now.webp",
+    video: "/video/fix-it-now.webm",
+    description:
+      "A full-stack home service booking platform connecting customers with verified technicians. Powered by Next.js 16 and a modular Express.js backend. Features JWT authentication with HTTP-only cookies, single-payment Stripe Checkout for per-booking service charges, automated webhook status sync, and fine-grained role-based access control.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "JWT",
+      "Zod",
+      "Stripe",
+    ],
+    link: "https://fix-it-now-frontend-ashen.vercel.app",
+    sourceCode: "https://github.com/Newton2n/fix-it-now-frontend",
+    backendLink: "https://fix-it-now-xi.vercel.app",
+    backendSourceCode: "https://github.com/Newton2n/fix-it-now-backend",
+    features: [
+      "Single-Payment System: One-time Stripe Checkout integration for per-service booking transactions",
+      "Automated Stripe Webhook Handlers: Instant booking status update to 'PAID' via signature-verified webhooks (`checkout.session.completed`)",
+      "JWT Authentication with secure HTTP-only cookies & RBAC (Customer, Technician, Admin)",
+      "Technician profile verification, availability schedule management, and service CRUD",
+      "End-to-end booking lifecycle management (REQUESTED to COMPLETED/PAID) with slot availability validation",
+      "Server-side search, multi-criteria filtering, sorting, and pagination across services & technicians",
+      "Next.js tag-based cache revalidation (`revalidateTag`) for high public catalog performance",
+      "Review and rating system linked to verified customer completed bookings",
+    ],
+    challenges: [
+      "Implementing idempotent webhook event processing for one-time booking payments",
+      "Designing robust booking availability validation algorithms to prevent conflicting slot reservations",
+      "Securing local vs. production Stripe webhook signing secret verification",
+      "Forwarding HTTP-only auth cookies seamlessly through Next.js Server Actions to the external Express API",
+    ],
+    futureImprovements: [
+      "Implement real-time WebSocket notifications for booking status transitions",
+      "Add automated booking reminders via SMS/Email",
+      "Enhance Admin dashboard with income analytics and transaction reports",
+    ],
+    backendMetrics: {
+      architecture: "Feature-Based Modular Express Architecture",
+      auth: "JWT + HTTP-only Cookies + RBAC",
+      database: "PostgreSQL + Prisma ORM",
+      validation: "Zod Schema Middleware Validation",
+      payments: "Stripe Checkout (Single/One-Time Booking Payments) + Webhooks",
+      latency: "Tag-based Cache Revalidation + Optimized Prisma Queries",
+      throughput: "PostgreSQL Connection Pooling",
+      endpoints: [
+        "/api/auth",
+        "/api/user",
+        "/api/technician",
+        "/api/category",
+        "/api/service",
+        "/api/booking",
+        "/api/payment",
+        "/api/review",
+        "/api/admin",
+      ],
+    },
   },
+
+  {
+    title: "Prisma Press",
+    category: "Full-stack",
+    image: "/image/press.webp",
+    video: "/video/press.webm",
+    description:
+      "A scalable, full-stack publishing platform featuring a Next.js 16 frontend and a modular Express.js 5 backend API. Integrates a recurring Stripe Subscription system for premium membership access alongside secure JWT session handling, role-based authorization, and automated subscription lifecycle webhooks.",
+    tech: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Express.js 5",
+      "Prisma 7.x",
+      "PostgreSQL",
+      "JWT",
+      "bcrypt",
+      "Zod",
+      "Stripe",
+    ],
+    link: "https://github.com/Newton2n/nextjs-press-frontend",
+    sourceCode: "https://github.com/Newton2n/nextjs-press-frontend",
+    backendLink: "https://prisma-press-lime.vercel.app/",
+    backendSourceCode: "https://github.com/Newton2n/prisma-press-server",
+    features: [
+      "Stripe Subscription System: Tiered recurring subscription checkout with automated customer profile creation in Stripe",
+      "Subscription Webhook Synchronization: Real-time handling of subscription updates, renewals, cancellations, and expirations",
+      "JWT authentication (Access & Refresh Tokens) with secure HTTP-only cookies",
+      "Role-based access control (USER, ADMIN, AUTHOR) controlling paywalled premium content",
+      "Blog post CRUD operations with public news feed and searchable articles",
+      "Author and admin dashboards for content, profile, and comment moderation",
+      "Global backend error handling and standardized API responses",
+      "Form validation with Zod and accessible UI feedback",
+    ],
+    challenges: [
+      "Managing complex recurring billing states (Active, Past Due, Canceled) via Stripe Webhooks",
+      "Building a scalable, feature-based modular backend architecture in Express",
+      "Designing secure authentication with HTTP-only cookies across environments",
+      "Connecting the Next.js App Router frontend seamlessly with the modular Express API",
+    ],
+    futureImprovements: [
+      "Add automated unit, integration, and end-to-end tests",
+      "Implement Redis caching for API responses",
+      "Richer author profiles and follow functionality",
+      "Notifications and email subscriptions",
+      "CI/CD workflows for linting and deployment checks",
+    ],
+    backendMetrics: {
+      architecture: "Feature-Based Modular Architecture",
+      auth: "JWT + HTTP-only Cookies + bcrypt + RBAC",
+      database: "PostgreSQL + Prisma 7.x",
+      validation: "Zod validation middleware",
+      payments: "Stripe Subscriptions (Recurring Billing) + Lifecycle Webhooks",
+      latency: "Optimized Prisma Queries",
+      throughput: "Standardized API Responses & Error Handling",
+      endpoints: [
+        "/api/auth",
+        "/api/users",
+        "/api/posts",
+        "/api/comments",
+        "/api/subscriptions",
+      ],
+    },
+  },
+
   {
     title: "Full Stack Social Media",
     category: "Full-stack",
     image: "/image/postora.webp",
     video: "/video/postora.webm",
-    description: "Postora is a full-stack image sharing platform migrated to Next.js. Features full CRUD functionality.",
-    tech: ["Next.js", "Appwrite", "React", "Redux", "Tailwind", "TinyMCE"],
+    description:
+      "Postora is a full-stack image sharing platform migrated to Next.js. It provides image publishing, user profiles, CRUD functionality, and application state management.",
+    tech: ["Next.js", "Appwrite", "React", "Redux", "Tailwind CSS", "TinyMCE"],
     link: "https://postora-web.vercel.app/",
     sourceCode: "https://github.com/Newton2n/Blog-App-By-React-And-Appwrite",
-    features: ["Profile sync", "CRUD permission wrappers", "Rich text injection"],
-    challenges: ["Synchronizing Appwrite assets", "Managing Redux state"],
-    futureImprovements: ["TanStack Query integration", "Real-time notifications"]
+    features: [
+      "User profile management",
+      "Image publishing",
+      "CRUD functionality",
+      "Permission-based operations",
+      "Redux state management",
+      "Rich text editing",
+    ],
+    challenges: [
+      "Synchronizing Appwrite assets",
+      "Managing global Redux state",
+      "Handling CRUD permissions",
+    ],
+    futureImprovements: [
+      "TanStack Query integration",
+      "Real-time notifications",
+    ],
   },
+
   {
     title: "Portfolio Website",
     category: "Front-end",
     image: "/image/portfolio.webp",
     video: "/video/portfolio.webm",
-    description: "A modern personal portfolio website built to showcase backend engineering expertise.",
-    tech: ["TypeScript", "Next.js", "Tailwind", "React", "GSAP"],
+    description:
+      "A modern personal portfolio website built with Next.js and TypeScript to showcase backend engineering projects, technical skills, and development experience.",
+    tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "GSAP"],
     link: "https://newtondev.vercel.app/",
     sourceCode: "https://github.com/Newton2n/My_Portfolio",
-    features: ["Layout balance", "GSAP animations", "Dark mode"],
-    challenges: ["GSAP scroll synchronization", "Performance optimization"],
-    futureImprovements: ["Interactive blog section", "Bundle size reduction"]
-  }
+    features: [
+      "Responsive layout",
+      "GSAP animations",
+      "Dark mode",
+      "Project showcase",
+      "Responsive navigation",
+    ],
+    challenges: [
+      "GSAP scroll synchronization",
+      "Responsive layout optimization",
+      "Performance optimization",
+    ],
+    futureImprovements: ["Interactive blog section", "Bundle size reduction"],
+  },
 ];
 
 export default projects;

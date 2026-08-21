@@ -8,7 +8,10 @@ interface ProjectGridProps {
   onViewDetails: (project: Project) => void;
 }
 
-export default function ProjectGrid({ projects, onViewDetails }: ProjectGridProps) {
+export default function ProjectGrid({
+  projects,
+  onViewDetails,
+}: ProjectGridProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center w-full">
       {projects.map((project, i) => (

@@ -5,6 +5,8 @@ export interface Project {
   tech: string[];
   link: string;
   sourceCode: string;
+  backendLink?: string;        
+  backendSourceCode?: string;  
   features: string[];
   challenges: string[];
   futureImprovements: string[];
@@ -14,6 +16,8 @@ export interface Project {
     throughput?: string;
     latency?: string;
     architecture?: string;
+    validation? :string;
+    payments? :string;
     endpoints?: string[]; 
     auth?: string;
     database?: string;
