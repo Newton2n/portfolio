@@ -14,6 +14,20 @@ const preahvihear = Preahvihear({
   subsets: ["latin"],
 });
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Newton",
+  url: "https://newtondev.me",
+  jobTitle: "Backend & Full-Stack Developer",
+  description:
+    "Backend-focused full-stack developer building web applications with Node.js, TypeScript, Next.js, PostgreSQL, Prisma, and React.",
+  sameAs: [
+    "https://github.com/Newton2n",
+    "https://www.linkedin.com/in/newton2n/",
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://newtondev.me"),
 
@@ -24,6 +38,10 @@ export const metadata: Metadata = {
 
   description:
     "Newton is a backend-focused full-stack developer building web applications with Node.js, TypeScript, Next.js, PostgreSQL, Prisma, and React.",
+
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
     title: "Newton | Backend & Full-Stack Developer",
@@ -78,6 +96,13 @@ export default function RootLayout({
 
           <Footer />
         </ThemeProviderWrapper>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
       </body>
     </html>
   );
