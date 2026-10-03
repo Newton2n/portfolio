@@ -15,38 +15,40 @@ const preahvihear = Preahvihear({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://newtondev.me"),
+
   title: {
-    default: "Newton — Backend & Full-Stack Engineer",
+    default: "Newton | Backend & Full-Stack Developer",
     template: "%s | Newton",
   },
 
   description:
-    "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
+    "Newton is a backend-focused full-stack developer building web applications with Node.js, TypeScript, Next.js, PostgreSQL, Prisma, and React.",
 
   openGraph: {
-    title: "Newton — Backend & Full-Stack Engineer",
+    title: "Newton | Backend & Full-Stack Developer",
     description:
-      "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
+      "Backend-focused full-stack developer building web applications with Node.js, TypeScript, Next.js, PostgreSQL, Prisma, and React.",
     url: "https://newtondev.me",
     siteName: "Newton",
-    images: [
-      {
-        url: "https://newtondev.me/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Newton — Backend & Full-Stack Engineer",
-      },
-    ],
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Newton | Backend & Full-Stack Developer",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Newton — Backend & Full-Stack Engineer",
+    title: "Newton | Backend & Full-Stack Developer",
     description:
-      "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
-    images: ["https://newtondev.me/og-image.png"],
+      "Backend-focused full-stack developer building web applications with Node.js, TypeScript, Next.js, PostgreSQL, Prisma, and React.",
+    images: ["/og-image.png"],
   },
 
   robots: {
