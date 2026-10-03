@@ -106,6 +106,75 @@ const projects: Project[] = [
   },
 
   {
+    title: "Orbrin",
+    category: "Full-stack",
+    image: "/image/orbrin.webp",
+    video: "/video/orbrin.webm",
+    description:
+      "A multi-tenant project management SaaS for organizations to manage teams, projects, sprints, tasks, comments, notifications, and activity. Built with Next.js and a modular Express.js backend using PostgreSQL, Prisma, Redis, JWT authentication, and Stripe subscription management.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "JWT",
+      "Stripe",
+    ],
+    link: "https://orbrin.vercel.app",
+    sourceCode: "https://github.com/Newton2n/orbrin",
+    backendLink: "https://orbrin-api.vercel.app",
+    backendSourceCode: "https://github.com/Newton2n/orbrin-api",
+    features: [
+      "Multi-tenant organization and team management",
+      "Project, sprint, and task management",
+      "Role-based permissions across organizations",
+      "JWT access and refresh token authentication",
+      "Redis-based sliding-window API rate limiting",
+      "Stripe organization subscription management",
+      "Comments, notifications, and activity tracking",
+      "Next.js Server Actions used as a BFF layer",
+      "PostgreSQL database with Prisma ORM",
+    ],
+    challenges: [
+      "Designing a multi-tenant data model with organization-level isolation",
+      "Implementing role-based permissions across organizations and resources",
+      "Designing secure access and refresh token authentication",
+      "Managing Stripe subscription state and organization billing",
+      "Implementing Redis-based API rate limiting",
+    ],
+    futureImprovements: [
+      "Add real-time notifications with WebSockets",
+      "Add advanced project analytics and reporting",
+      "Implement automated testing across frontend and backend",
+      "Add more granular organization and project permissions",
+    ],
+    backendMetrics: {
+      architecture: "Feature-Based Modular Express Architecture",
+      auth: "JWT Access + Refresh Tokens",
+      database: "PostgreSQL + Prisma ORM",
+      validation: "Zod Schema Validation",
+      payments: "Stripe Organization Subscriptions",
+      endpoints: [
+        "/api/v1/auth",
+        "/api/v1/organizations",
+        "/api/v1/teams",
+        "/api/v1/projects",
+        "/api/v1/sprints",
+        "/api/v1/tasks",
+        "/api/v1/comments",
+        "/api/v1/notifications",
+        "/api/v1/subscriptions",
+      ],
+    },
+  },
+
+  {
     title: "Prisma Press",
     category: "Full-stack",
     image: "/image/press.webp",
@@ -177,7 +246,14 @@ const projects: Project[] = [
     video: "/video/postora.webm",
     description:
       "Postora is a full-stack image sharing platform migrated to Next.js. It provides image publishing, user profiles, CRUD functionality, and application state management.",
-    tech: ["Next.js", "Appwrite", "React", "Redux", "Tailwind CSS", "TinyMCE"],
+    tech: [
+      "Next.js",
+      "Appwrite",
+      "React",
+      "Redux",
+      "Tailwind CSS",
+      "TinyMCE",
+    ],
     link: "https://postora-web.vercel.app/",
     sourceCode: "https://github.com/Newton2n/Blog-App-By-React-And-Appwrite",
     features: [
@@ -221,7 +297,10 @@ const projects: Project[] = [
       "Responsive layout optimization",
       "Performance optimization",
     ],
-    futureImprovements: ["Interactive blog section", "Bundle size reduction"],
+    futureImprovements: [
+      "Interactive blog section",
+      "Bundle size reduction",
+    ],
   },
 ];
 

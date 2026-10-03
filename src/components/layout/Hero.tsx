@@ -20,13 +20,14 @@ const Hero = () => {
   const [scrollStart, setScrollStart] = useState({ left: 0, top: 0 });
 
   // Resume Links
-  const fileId = "1L49t7jSjE2S2D1hXCFDpDHZUlDboAxVO";
+  const fileId = "1R-KEWLM93x6LVnfwzp654K20gLv5QR9D";
   const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
 
   // Clean embedded PDF URL
   const previewPdfUrl = `https://docs.google.com/gview?url=https://drive.google.com/uc?id=${fileId}&embedded=true`;
 
- 
+  
   const handleResumeAction = () => {
     
     const link = document.createElement("a");
