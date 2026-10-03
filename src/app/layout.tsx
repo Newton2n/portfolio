@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Preahvihear } from "next/font/google";
 import "./globals.css";
 
-
 import ClientWrapper from "@/components/layout/ClientWrapper";
 import Footer from "@/components/layout/Footer";
 import { ThemeProviderWrapper } from "@/providers/ThemeProvider";
 
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+
 const preahvihear = Preahvihear({
   weight: ["400"],
   variable: "--font-Preahvihear",
@@ -19,8 +19,40 @@ export const metadata: Metadata = {
     default: "Newton — Backend & Full-Stack Engineer",
     template: "%s | Newton",
   },
+
   description:
     "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
+
+  openGraph: {
+    title: "Newton — Backend & Full-Stack Engineer",
+    description:
+      "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
+    url: "https://newtondev.me",
+    siteName: "Newton",
+    images: [
+      {
+        url: "https://newtondev.me/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Newton — Backend & Full-Stack Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Newton — Backend & Full-Stack Engineer",
+    description:
+      "Portfolio of Newton, a backend and full-stack engineer specializing in building scalable, optimized backend systems and complete web applications.",
+    images: ["https://newtondev.me/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -29,13 +61,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${preahvihear.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${preahvihear.variable}`}
+      suppressHydrationWarning
+    >
       <body className="antialiased min-h-screen bg-white dark:bg-black transition-colors duration-200">
         <ThemeProviderWrapper>
           <Analytics />
+
           <div className="mx-auto">
             <ClientWrapper>{children}</ClientWrapper>
           </div>
+
           <Footer />
         </ThemeProviderWrapper>
       </body>
